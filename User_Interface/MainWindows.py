@@ -1,11 +1,11 @@
 import json
 import os
 import sys
-from PyQt5.QtGui import QBrush, QColor, QDesktopServices, QFont, QImage, QPainter, QPixmap#需要安装库 pip3 install PyQt5
+from PyQt5.QtGui import QBrush, QColor, QDesktopServices, QFont, QImage, QPainter, QPixmap#Need to install library PIP3 Install pyqt5
 from PyQt5.QtCore import  QObject,  QRect,  QUrl,  Qt, pyqtSignal 
 from PyQt5.QtWidgets import QAbstractItemView,QHeaderView,QApplication, QTableWidgetItem, QFrame, QGridLayout, QGroupBox, QLabel,QFileDialog, QStackedWidget, QHBoxLayout, QVBoxLayout
 
-from qfluentwidgets.components import Dialog  # 需要安装库 pip install "PyQt-Fluent-Widgets[full]" -i https://pypi.org/simple/
+from qfluentwidgets.components import Dialog  # Need to install the PIP Install "Pyqt-Fluent-widgets [Full]" --i https://pypi.org/simple/
 from qfluentwidgets import ProgressRing, SegmentedWidget, TableWidget,CheckBox, DoubleSpinBox, HyperlinkButton,InfoBar, InfoBarPosition, NavigationWidget, Slider, SpinBox, ComboBox, LineEdit, PrimaryPushButton, PushButton ,StateToolTip, SwitchButton, TeachingTip, TeachingTipTailPosition, TeachingTipView, TextEdit, Theme,  setTheme ,isDarkTheme,qrouter,NavigationInterface,NavigationItemPosition, EditableComboBox
 from qfluentwidgets import FluentIcon as FIF
 from qframelesswindow import FramelessWindow, StandardTitleBar
@@ -69,7 +69,7 @@ from .Text_Extraction_Tool_Interface.Interface_update_text import Widget_update_
 
 
 
-class window(FramelessWindow): #主窗口 v
+class window(FramelessWindow): #Main window v
 
 
     def __init__(self,Software_Version,configurator,user_interface_prompter,background_executor,jtpp):
@@ -81,14 +81,14 @@ class window(FramelessWindow): #主窗口 v
         self.navigationInterface = NavigationInterface(self, showMenuButton=True)
         self.stackWidget = QStackedWidget(self)
 
-        # 版本号
+        # Version number
         self.Software_Version = Software_Version
 
         self.configurator = configurator
         self.user_interface_prompter = user_interface_prompter
         self.background_executor = background_executor
 
-        # 创建子界面控件，传入参数为对象名和parent
+        # Create the sub -interface control, the passing parameters are object names and paint
         self.Widget_AI = Widget_AI('Widget_AI', self)
         self.Widget_Official_api = Widget_Official_api('Widget_Official_api', self)
         self.Widget_Openai = Widget_Openai('Widget_Openai', self,configurator,user_interface_prompter,background_executor)   
@@ -169,7 +169,7 @@ class window(FramelessWindow): #主窗口 v
         # 添加账号设置界面
         self.addSubInterface(self.Widget_AI, FIF.IOT, '账号设置',NavigationItemPosition.SCROLL) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
         # 添加官方接口界面
-        self.addSubInterface(self.Widget_Official_api, FIF.PEOPLE, '官方接口',parent=self.Widget_AI) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
+        self.addSubInterface(self.Widget_Official_api, FIF.PEOPLE, 'Official interface',parent=self.Widget_AI) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
         # 添加closeai官方账号界面
         self.addSubInterface(self.Widget_Openai, FIF.FEEDBACK, 'OpenAI',parent=self.Widget_Official_api) 
         # 添加谷歌官方账号界面
@@ -189,13 +189,13 @@ class window(FramelessWindow): #主窗口 v
         # 添加Yi官方账号界面
         self.addSubInterface(self.Widget_Yi, FIF.FEEDBACK, '零一万物',parent=self.Widget_Official_api) 
         # 添加智谱官方账号界面
-        self.addSubInterface(self.Widget_ZhiPu, FIF.FEEDBACK, '智谱',parent=self.Widget_Official_api) 
+        self.addSubInterface(self.Widget_ZhiPu, FIF.FEEDBACK, 'Codex',parent=self.Widget_Official_api) 
 
 
         # 添加代理账号界面
-        self.addSubInterface(self.Widget_Proxy_platform, FIF.CLOUD, '代理平台',parent=self.Widget_AI) 
-        self.addSubInterface_add_new_proxy(self.Widget_Add_proxy_platform, FIF.ADD, '添加',parent=self.Widget_Proxy_platform) 
-        self.addSubInterface(self.Widget_Proxy, FIF.CLOUD, '代理平台A',parent=self.Widget_Proxy_platform) 
+        self.addSubInterface(self.Widget_Proxy_platform, FIF.CLOUD, 'Agent Platform',parent=self.Widget_AI) 
+        self.addSubInterface_add_new_proxy(self.Widget_Add_proxy_platform, FIF.ADD, 'Add',parent=self.Widget_Proxy_platform) 
+        self.addSubInterface(self.Widget_Proxy, FIF.CLOUD, 'Agent Platform A',parent=self.Widget_Proxy_platform) 
 
 
         # 添加sakura界面
@@ -204,32 +204,32 @@ class window(FramelessWindow): #主窗口 v
         self.navigationInterface.addSeparator(NavigationItemPosition.SCROLL) # 添加分隔符
 
         # 添加翻译设置相关页面
-        self.addSubInterface(self.Widget_translation_settings, FIF.APPLICATION, '翻译设置',NavigationItemPosition.SCROLL) 
-        self.addSubInterface(self.Widget_translation_settings_A, FIF.REMOVE, '基础设置',parent=self.Widget_translation_settings) 
-        self.addSubInterface(self.Widget_translation_settings_B1, FIF.ALIGNMENT, '发送设置',parent=self.Widget_translation_settings) 
-        self.addSubInterface(self.Widget_translation_settings_B2, FIF.ALBUM, '专项设置',parent=self.Widget_translation_settings) 
-        self.addSubInterface(self.Widget_translation_settings_B3, FIF.CHECKBOX, '检查设置',parent=self.Widget_translation_settings) 
-        self.addSubInterface(self.Widget_translation_settings_C, FIF.EMOJI_TAB_SYMBOLS, '混合翻译设置',parent=self.Widget_translation_settings) 
+        self.addSubInterface(self.Widget_translation_settings, FIF.APPLICATION, 'Translation settings',NavigationItemPosition.SCROLL) 
+        self.addSubInterface(self.Widget_translation_settings_A, FIF.REMOVE, 'Basic settings',parent=self.Widget_translation_settings) 
+        self.addSubInterface(self.Widget_translation_settings_B1, FIF.ALIGNMENT, 'Send settings',parent=self.Widget_translation_settings) 
+        self.addSubInterface(self.Widget_translation_settings_B2, FIF.ALBUM, 'Specialized settings',parent=self.Widget_translation_settings) 
+        self.addSubInterface(self.Widget_translation_settings_B3, FIF.CHECKBOX, 'Check Settings',parent=self.Widget_translation_settings) 
+        self.addSubInterface(self.Widget_translation_settings_C, FIF.EMOJI_TAB_SYMBOLS, 'Mixed Translation Settings',parent=self.Widget_translation_settings) 
 
         # 添加开始翻译页面
-        self.addSubInterface(self.Widget_start_translation, FIF.ROBOT, '开始翻译',NavigationItemPosition.SCROLL)  
+        self.addSubInterface(self.Widget_start_translation, FIF.ROBOT, 'Start translation',NavigationItemPosition.SCROLL)  
 
         self.navigationInterface.addSeparator(NavigationItemPosition.SCROLL) # 添加分隔符
 
         # 添加翻译设置相关页面
-        self.addSubInterface(self.Widget_rulebook, FIF.BOOK_SHELF, '提示书',NavigationItemPosition.SCROLL) 
-        self.addSubInterface(self.Widget_system_prompt, FIF.LABEL, '基础提示',parent=self.Widget_rulebook)
-        self.addSubInterface(self.Widget_prompt_dict, FIF.DICTIONARY, '提示字典',parent=self.Widget_rulebook)   
-        self.addSubInterface(self.Widget_characterization, FIF.EXPRESSIVE_INPUT_ENTRY, '角色介绍',parent=self.Widget_rulebook) 
-        self.addSubInterface(self.Widget_world_building, FIF.QUICK_NOTE, '背景设定',parent=self.Widget_rulebook) 
-        self.addSubInterface(self.Widget_writing_style, FIF.PENCIL_INK, '文风要求',parent=self.Widget_rulebook) 
-        self.addSubInterface(self.Widget_translation_example, FIF.ZOOM, '翻译示例',parent=self.Widget_rulebook) 
+        self.addSubInterface(self.Widget_rulebook, FIF.BOOK_SHELF, 'Reminder',NavigationItemPosition.SCROLL) 
+        self.addSubInterface(self.Widget_system_prompt, FIF.LABEL, 'Basic Tips',parent=self.Widget_rulebook)
+        self.addSubInterface(self.Widget_prompt_dict, FIF.DICTIONARY, 'Tip Dictionary',parent=self.Widget_rulebook)   
+        self.addSubInterface(self.Widget_characterization, FIF.EXPRESSIVE_INPUT_ENTRY, 'Characters',parent=self.Widget_rulebook) 
+        self.addSubInterface(self.Widget_world_building, FIF.QUICK_NOTE, 'Background ',parent=self.Widget_rulebook) 
+        self.addSubInterface(self.Widget_writing_style, FIF.PENCIL_INK, 'Writing Style',parent=self.Widget_rulebook) 
+        self.addSubInterface(self.Widget_translation_example, FIF.ZOOM, 'Example of Translation',parent=self.Widget_rulebook) 
 
         # 添加替换字典页面
-        self.addSubInterface(self.Widget_replace_dict, FIF.DICTIONARY, '替换字典',NavigationItemPosition.SCROLL)  
+        self.addSubInterface(self.Widget_replace_dict, FIF.DICTIONARY, 'Replacement Dictionary',NavigationItemPosition.SCROLL)  
 
         # 添加参数调整页面
-        self.addSubInterface(self.Widget_tune, FIF.MIX_VOLUMES, '参数调整',NavigationItemPosition.SCROLL)  
+        self.addSubInterface(self.Widget_tune, FIF.MIX_VOLUMES, 'Parameter Adjustment',NavigationItemPosition.SCROLL)  
         self.addSubInterface(self.Widget_tune_openai, FIF.SPEED_OFF, 'OpenAI',parent=self.Widget_tune)
         self.addSubInterface(self.Widget_tune_anthropic, FIF.SPEED_OFF, 'Anthropic',parent=self.Widget_tune)    
         self.addSubInterface(self.Widget_tune_sakura, FIF.SPEED_OFF, 'Sakura',parent=self.Widget_tune)  
@@ -240,14 +240,14 @@ class window(FramelessWindow): #主窗口 v
 
         # 添加RPG界面
         self.addSubInterface(self.Widget_RPG, FIF.TILES, 'StevExtraction',NavigationItemPosition.SCROLL)
-        self.addSubInterface(self.Widget_export_source_text, FIF.SHARE, '提取原文',parent=self.Widget_RPG)
-        self.addSubInterface(self.Widget_import_translated_text, FIF.LABEL, '导入译文',parent=self.Widget_RPG)
-        self.addSubInterface(self.Widget_update_text, FIF.PIE_SINGLE, '提取增量文本',parent=self.Widget_RPG)
+        self.addSubInterface(self.Widget_export_source_text, FIF.SHARE, 'Extract The Original Text',parent=self.Widget_RPG)
+        self.addSubInterface(self.Widget_import_translated_text, FIF.LABEL, 'Introducing the translation',parent=self.Widget_RPG)
+        self.addSubInterface(self.Widget_update_text, FIF.PIE_SINGLE, 'Extract incremental text',parent=self.Widget_RPG)
 
         self.navigationInterface.addSeparator(NavigationItemPosition.SCROLL) 
 
         # 添加赞助页面
-        self.addSubInterface(self.Widget_sponsor, FIF.CAFE, '赞助一下', NavigationItemPosition.BOTTOM) 
+        self.addSubInterface(self.Widget_sponsor, FIF.CAFE, 'Sponsor it.', NavigationItemPosition.BOTTOM) 
 
        # 添加头像导航项
         self.navigationInterface.addWidget(
@@ -312,7 +312,7 @@ class window(FramelessWindow): #主窗口 v
         self.view = TeachingTipView(
             icon=None,
             title='Add a new platform',
-            content="请输入新平台名字",
+            content="Please enter the name of the new platform",
             #image='resource/Gyro.jpg',
             isClosable=True,
             tailPosition=TeachingTipTailPosition.RIGHT,
@@ -324,7 +324,7 @@ class window(FramelessWindow): #主窗口 v
 
 
         # 按钮
-        self.Button = PushButton('确认')
+        self.Button = PushButton('Verify')
         self.Button.setFixedWidth(120)
         self.Button.clicked.connect(self.addSubInterface_onClick)
         
@@ -441,12 +441,12 @@ class window(FramelessWindow): #主窗口 v
 
     #窗口关闭函数，放在最后面，解决界面空白与窗口退出后子线程还在运行的问题
     def closeEvent(self, event):
-        title = '确定是否退出程序?'
-        content = """如果正在进行翻译任务，当前任务会取消。"""
+        title = 'Determine whether to withdraw from the program?'
+        content = """If a translation task is in progress, the current task is canceled."""
         w = Dialog(title, content, self)
 
         if w.exec() :
-            print("[INFO] 主窗口已经退出！")
+            print("[INFO] The main window has exited!")
             self.configurator.Running_status = 11
             event.accept()
         else:
