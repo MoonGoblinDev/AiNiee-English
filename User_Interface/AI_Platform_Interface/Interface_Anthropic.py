@@ -32,7 +32,7 @@ class Widget_Anthropic(QFrame):#  Anthropic账号界面
 
         #设置“账号类型”下拉选择框
         self.comboBox_account_type = ComboBox() #以demo为父类
-        self.comboBox_account_type.addItems(['免费账号',  '付费账号(等级1)',  '付费账号(等级2)',  '付费账号(等级3)',  '付费账号(等级4)'])
+        self.comboBox_account_type.addItems(['Free Account',  '付费账号(等级1)',  '付费账号(等级2)',  '付费账号(等级3)',  '付费账号(等级4)'])
         self.comboBox_account_type.setCurrentIndex(0) #设置下拉框控件（ComboBox）的当前选中项的索引为0，也就是默认选中第一个选项
         self.comboBox_account_type.setFixedSize(150, 35)
 

@@ -370,7 +370,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["openai_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -413,7 +413,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["anthropic_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -455,7 +455,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["google_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -499,7 +499,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["cohere_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -544,7 +544,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["yi_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -587,7 +587,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["zhipu_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -632,7 +632,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["moonshot_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -677,7 +677,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["deepseek_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -719,7 +719,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["dashscope_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -761,7 +761,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["volcengine_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -801,7 +801,7 @@ class Configurator():
             # 如果填入地址，则设置代理端口
             Proxy_Address = config_dict["sakura_proxy_port"]              #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -860,7 +860,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict["op_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 
@@ -920,7 +920,7 @@ class Configurator():
             #如果填入地址，则设置代理端口
             Proxy_Address = config_dict[object_Name]["op_proxy_port"]            #获取代理端口
             if Proxy_Address :
-                print("[INFO] 系统代理端口是:",Proxy_Address,'\n') 
+                print("[INFO] The system agent port is:",Proxy_Address,'\n') 
                 os.environ["http_proxy"]=Proxy_Address
                 os.environ["https_proxy"]=Proxy_Address
 

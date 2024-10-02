@@ -167,7 +167,7 @@ class window(FramelessWindow): #Main window v
  
 
         # 添加账号设置界面
-        self.addSubInterface(self.Widget_AI, FIF.IOT, '账号设置',NavigationItemPosition.SCROLL) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
+        self.addSubInterface(self.Widget_AI, FIF.IOT, 'Account Settings',NavigationItemPosition.SCROLL) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
         # 添加官方接口界面
         self.addSubInterface(self.Widget_Official_api, FIF.PEOPLE, 'Official interface',parent=self.Widget_AI) # NavigationItemPosition.SCROLL表示在可滚动伸缩区域
         # 添加closeai官方账号界面
@@ -441,7 +441,7 @@ class window(FramelessWindow): #Main window v
 
     #窗口关闭函数，放在最后面，解决界面空白与窗口退出后子线程还在运行的问题
     def closeEvent(self, event):
-        title = 'Determine whether to withdraw from the program?'
+        title = 'Are you sure you want to exist from the program?'
         content = """If a translation task is in progress, the current task is canceled."""
         w = Dialog(title, content, self)
 

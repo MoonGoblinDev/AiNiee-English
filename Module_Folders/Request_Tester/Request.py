@@ -67,7 +67,7 @@ class Request_Tester():
 
         #如果填入地址，则设置系统代理
         if proxy_port :
-            print("[INFO] 系统代理端口是:",proxy_port,'\n') 
+            print("[INFO] The system agent port is:",proxy_port,'\n') 
             os.environ["http_proxy"]=proxy_port
             os.environ["https_proxy"]=proxy_port
 
@@ -145,7 +145,7 @@ class Request_Tester():
 
         #如果填入地址，则设置系统代理
         if proxy_port :
-            print("[INFO] 系统代理端口是:",proxy_port,'\n') 
+            print("[INFO] The system agent port is:",proxy_port,'\n') 
             os.environ["http_proxy"]=proxy_port
             os.environ["https_proxy"]=proxy_port
 
@@ -254,7 +254,7 @@ class Request_Tester():
 
         #如果填入地址，则设置系统代理
         if proxy_port :
-            print("[INFO] 系统代理端口是:",proxy_port,'\n') 
+            print("[INFO] The system agent port is:",proxy_port,'\n') 
             os.environ["http_proxy"]=proxy_port
             os.environ["https_proxy"]=proxy_port
 
@@ -341,7 +341,7 @@ class Request_Tester():
 
         #如果填入地址，则设置系统代理
         if proxy_port :
-            print("[INFO] 系统代理端口是:",proxy_port,'\n') 
+            print("[INFO] The system agent port is:",proxy_port,'\n') 
             os.environ["http_proxy"]=proxy_port
             os.environ["https_proxy"]=proxy_port
 
@@ -420,7 +420,7 @@ class Request_Tester():
 
         #如果填入地址，则设置系统代理
         if proxy_port :
-            print("[INFO] 系统代理端口是:",proxy_port,'\n') 
+            print("[INFO] The system agent port is:",proxy_port,'\n') 
             os.environ["http_proxy"]=proxy_port
             os.environ["https_proxy"]=proxy_port
 

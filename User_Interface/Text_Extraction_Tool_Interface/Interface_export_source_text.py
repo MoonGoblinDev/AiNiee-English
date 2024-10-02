@@ -33,10 +33,10 @@ class Widget_export_source_text(QFrame):#  提取子界面
         self.labe1_3.setText("RPG Maker MV/MZ 的文本提取注入工具")
 
 
-        #设置官方文档说明链接按钮
+        #设置Official Docs说明链接按钮
         hyperlinkButton = HyperlinkButton(
             url='https://github.com/NEKOparapa/AiNiee/blob/main/StevExtraction/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md',
-            text='(使用说明)'
+            text='(Instructions for use)'
         )
 
 
@@ -57,7 +57,7 @@ class Widget_export_source_text(QFrame):#  提取子界面
         #设置“是否日语游戏”标签
         self.labe1_4 = QLabel(flags=Qt.WindowFlags())  
         self.labe1_4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        self.labe1_4.setText("是否日语游戏")
+        self.labe1_4.setText("Whether the game is in Japanese")
 
 
 
@@ -84,15 +84,15 @@ class Widget_export_source_text(QFrame):#  提取子界面
         #设置“游戏文件夹”标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("游戏文件夹")
+        label4.setText("Games Folder")
 
         #设置“游戏文件夹”显示
         self.label_input_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_input_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px")
-        self.label_input_path.setText("(游戏根目录文件夹)")  
+        self.label_input_path.setText("(Game root folder)")  
 
         #设置打开文件按钮
-        self.pushButton_input = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_input = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_input.clicked.connect(self.Select_project_folder) #按钮绑定槽函数
 
 
@@ -113,15 +113,15 @@ class Widget_export_source_text(QFrame):#  提取子界面
         #设置“输出文件夹”标签
         label6 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label6.setText("原文存储文件夹")
+        label6.setText("Original storage folder")
 
         #设置“输出文件夹”显示
         self.label_output_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_output_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label_output_path.setText("(游戏原文提取后存放的文件夹)")
+        self.label_output_path.setText("(The folder where the original game is stored after extraction)")
 
         #设置输出文件夹按钮
-        self.pushButton_output = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_output = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_output.clicked.connect(self.Select_output_folder) #按钮绑定槽函数
 
 
@@ -141,15 +141,15 @@ class Widget_export_source_text(QFrame):#  提取子界面
         #设置“输出文件夹”标签
         label6 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label6.setText("工程存储文件夹")
+        label6.setText("Project Storage Folder")
 
         #设置“输出文件夹”显示
         self.label_data_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_data_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label_data_path.setText("(该游戏工程数据存放的文件夹)")
+        self.label_data_path.setText("(The folder where the game's project data is stored)")
 
         #设置输出文件夹按钮
-        self.pushButton_data = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_data = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_data.clicked.connect(self.Select_data_folder) #按钮绑定槽函数
 
 
@@ -170,7 +170,7 @@ class Widget_export_source_text(QFrame):#  提取子界面
 
 
         #设置“开始翻译”的按钮
-        self.primaryButton_start_export = PrimaryPushButton('开始提取原文', self, FIF.UPDATE)
+        self.primaryButton_start_export = PrimaryPushButton('Begin extraction of the original text', self, FIF.UPDATE)
         self.primaryButton_start_export.clicked.connect(self.Start_export) #按钮绑定槽函数
 
 
@@ -202,16 +202,16 @@ class Widget_export_source_text(QFrame):#  提取子界面
     #设置开关绑定函数
     def test(self, isChecked: bool):
         if isChecked== False:
-            self.user_interface_prompter.createWarningInfoBar("不建议使用在非日语游戏上,容易出现问题")
+            self.user_interface_prompter.createWarningInfoBar("Not recommended for non-Japanese games, prone to problems.")
 
     # 选择输入文件夹按钮绑定函数
     def Select_project_folder(self):
         Input_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Input_Folder:
             self.label_input_path.setText(Input_Folder)
-            print('[INFO]  已选择游戏根目录文件夹: ',Input_Folder)
+            print('[INFO]  The game root folder has been selected: ',Input_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
 
@@ -220,9 +220,9 @@ class Widget_export_source_text(QFrame):#  提取子界面
         Output_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Output_Folder:
             self.label_output_path.setText(Output_Folder)
-            print('[INFO]  已选择原文存储文件夹:' ,Output_Folder)
+            print('[INFO]  Original text storage folder has been selected:' ,Output_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
 
@@ -231,15 +231,15 @@ class Widget_export_source_text(QFrame):#  提取子界面
         data_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if data_Folder:
             self.label_data_path.setText(data_Folder)
-            print('[INFO]  已选择工程存储文件夹:' ,data_Folder)
+            print('[INFO]  Project storage folder selected:' ,data_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
 
     # 提取函数
     def Start_export(self):
-        print('[INFO]  开始提取游戏原文,请耐心等待！！！')
+        print('[INFO]  Start to extract the original game, please wait!！！！')
 
         #读取配置文件
         config_path = os.path.join(self.configurator.script_dir, "StevExtraction", "config.yaml")

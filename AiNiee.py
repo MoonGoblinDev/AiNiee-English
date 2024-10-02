@@ -2377,15 +2377,15 @@ class User_Interface_Prompter(QObject):
                 # 翻译状态改变
                 Window.Widget_start_translation.A_settings.running_status.setText("已取消翻译")
                 #重置翻译界面数据
-                Window.Widget_start_translation.A_settings.translation_project.setText("无")
-                Window.Widget_start_translation.A_settings.project_id.setText("无")
-                Window.Widget_start_translation.A_settings.total_text_line_count.setText("无")
-                Window.Widget_start_translation.A_settings.translated_line_count.setText("无")
-                Window.Widget_start_translation.A_settings.tokens_spent.setText("无")
-                Window.Widget_start_translation.A_settings.amount_spent.setText("无")
-                Window.Widget_start_translation.A_settings.thread_count.setText("无")
-                Window.Widget_start_translation.A_settings.translation_speed_token.setText("无")
-                Window.Widget_start_translation.A_settings.translation_speed_line.setText("无")
+                Window.Widget_start_translation.A_settings.translation_project.setText("None")
+                Window.Widget_start_translation.A_settings.project_id.setText("None")
+                Window.Widget_start_translation.A_settings.total_text_line_count.setText("None")
+                Window.Widget_start_translation.A_settings.translated_line_count.setText("None")
+                Window.Widget_start_translation.A_settings.tokens_spent.setText("None")
+                Window.Widget_start_translation.A_settings.amount_spent.setText("None")
+                Window.Widget_start_translation.A_settings.thread_count.setText("None")
+                Window.Widget_start_translation.A_settings.translation_speed_token.setText("None")
+                Window.Widget_start_translation.A_settings.translation_speed_line.setText("None")
                 Window.Widget_start_translation.A_settings.progressRing.setValue(0)
 
 
@@ -2458,15 +2458,15 @@ class User_Interface_Prompter(QObject):
         elif input_str1 == "重置界面数据":
 
             #重置翻译界面数据
-            Window.Widget_start_translation.A_settings.translation_project.setText("无")
-            Window.Widget_start_translation.A_settings.project_id.setText("无")
-            Window.Widget_start_translation.A_settings.total_text_line_count.setText("无")
-            Window.Widget_start_translation.A_settings.translated_line_count.setText("无")
-            Window.Widget_start_translation.A_settings.translation_speed_token.setText("无")
-            Window.Widget_start_translation.A_settings.translation_speed_line.setText("无")
-            Window.Widget_start_translation.A_settings.tokens_spent.setText("无")
-            Window.Widget_start_translation.A_settings.amount_spent.setText("无")
-            Window.Widget_start_translation.A_settings.thread_count.setText("无")
+            Window.Widget_start_translation.A_settings.translation_project.setText("None")
+            Window.Widget_start_translation.A_settings.project_id.setText("None")
+            Window.Widget_start_translation.A_settings.total_text_line_count.setText("None")
+            Window.Widget_start_translation.A_settings.translated_line_count.setText("None")
+            Window.Widget_start_translation.A_settings.translation_speed_token.setText("None")
+            Window.Widget_start_translation.A_settings.translation_speed_line.setText("None")
+            Window.Widget_start_translation.A_settings.tokens_spent.setText("None")
+            Window.Widget_start_translation.A_settings.amount_spent.setText("None")
+            Window.Widget_start_translation.A_settings.thread_count.setText("None")
             Window.Widget_start_translation.A_settings.progressRing.setValue(0)
 
 
@@ -3523,7 +3523,7 @@ class background_executor(threading.Thread):
 
 
         # 执行接口测试
-        elif self.task_id == "接口测试":
+        elif self.task_id == "Interface Testing":
 
             configurator.Running_status = 1
             Request_Tester.request_test(self,user_interface_prompter,self.platform,self.base_url,self.model,self.api_key,self.proxy_port)

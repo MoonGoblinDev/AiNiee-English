@@ -29,15 +29,15 @@ class Widget_update_text(QFrame):#  更新子界面
         #设置“输入文件夹”标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("游戏文件夹")
+        label4.setText("Game Folder")
 
         #设置“输入文件夹”显示
         self.label_input_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_input_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px")
-        self.label_input_path.setText("(新版本的游戏根目录文件夹)")  
+        self.label_input_path.setText("(New version of the game root folder)")  
 
         #设置打开文件按钮
-        self.pushButton_input = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_input = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_input.clicked.connect(self.Select_game_folder) #按钮绑定槽函数
 
 
@@ -58,15 +58,15 @@ class Widget_update_text(QFrame):#  更新子界面
         #设置“输入文件夹”标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("工程文件夹")
+        label4.setText("Project folder")
 
         #设置“输入文件夹”显示
         self.label_data_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_data_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px")
-        self.label_data_path.setText("(新版本游戏导出的工程数据文件夹)")  
+        self.label_data_path.setText("(New version of the game exported project data folder)")  
 
         #设置打开文件按钮
-        self.pushButton_data = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_data = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_data.clicked.connect(self.Select_data_folder) #按钮绑定槽函数
 
 
@@ -87,15 +87,15 @@ class Widget_update_text(QFrame):#  更新子界面
         #设置“输出文件夹”标签
         self.label6 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        self.label6.setText("译文文件夹")
+        self.label6.setText("Translation folder")
 
         #设置“输出文件夹”显示
         self.label_translation_folder = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_translation_folder.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label_translation_folder.setText("(旧版本游戏的译文文件存放的文件夹)")
+        self.label_translation_folder.setText("(Folders where translated files from older versions of the game are stored)")
 
         #设置输出文件夹按钮
-        self.pushButton_translation_folder = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_translation_folder = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_translation_folder.clicked.connect(self.Select_translation_folder) #按钮绑定槽函数
 
 
@@ -114,15 +114,15 @@ class Widget_update_text(QFrame):#  更新子界面
         #设置“输出文件夹”标签
         self.label7 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label7.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        self.label7.setText("保存文件夹")
+        self.label7.setText("Save Folder")
 
         #设置“输出文件夹”显示
         self.label_output_folder = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_output_folder.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label_output_folder.setText("(新版游戏提取到的原文与旧版译文合并后，剩下的需要翻译的原文保存路径)")
+        self.label_output_folder.setText("(After the original text extracted from the new version of the game is merged with the old translation, the remaining original text that needs to be translated is saved in path)")
 
         #设置输出文件夹按钮
-        self.pushButton_putput_folder = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_putput_folder = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_putput_folder.clicked.connect(self.Select_save_folder) #按钮绑定槽函数
 
 
@@ -143,7 +143,7 @@ class Widget_update_text(QFrame):#  更新子界面
 
 
         #设置“开始翻译”的按钮
-        self.primaryButton_start_import = PrimaryPushButton('开始提取原文', self, FIF.UPDATE)
+        self.primaryButton_start_import = PrimaryPushButton('Begin extraction of the original text', self, FIF.UPDATE)
         self.primaryButton_start_import.clicked.connect(self.Start_import) #按钮绑定槽函数
 
 
@@ -177,9 +177,9 @@ class Widget_update_text(QFrame):#  更新子界面
         Input_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Input_Folder:
             self.label_input_path.setText(Input_Folder)
-            print('[INFO]  已选择新版游戏文件夹: ',Input_Folder)
+            print('[INFO]  New game folder selected: ',Input_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
         
     # 选择工程文件夹按钮绑定函数
@@ -187,9 +187,9 @@ class Widget_update_text(QFrame):#  更新子界面
         Data_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Data_Folder:
             self.label_data_path.setText(Data_Folder)
-            print('[INFO]  已选择新版游戏工程数据文件夹: ',Data_Folder)
+            print('[INFO]  The new version of the game project data folder has been selected: ',Data_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
     # 选择译文文件夹按钮绑定函数
@@ -197,9 +197,9 @@ class Widget_update_text(QFrame):#  更新子界面
         translation_folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if translation_folder:
             self.label_translation_folder.setText(translation_folder)
-            print('[INFO]  已选择旧版译文文件夹:' ,translation_folder)
+            print('[INFO]  Older translations folder selected:' ,translation_folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
         
     # 选择存储文件夹按钮绑定函数
@@ -207,14 +207,14 @@ class Widget_update_text(QFrame):#  更新子界面
         save_folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if save_folder:
             self.label_output_folder.setText(save_folder)
-            print('[INFO]  已选择保存文件夹:' ,save_folder)
+            print('[INFO]  Save folder selected:' ,save_folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
 
     
     # 导入按钮绑定函数
     def Start_import(self):
-        print('[INFO]  开始提取新版本游戏原文,请耐心等待！！！')
+        print('[INFO]  Please be patient as we begin to extract the original text of the new version of the game! ！！')
 
         #读取配置文件
         config_path = os.path.join(self.configurator.script_dir, "StevExtraction", "config.yaml")

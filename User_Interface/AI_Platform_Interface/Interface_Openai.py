@@ -29,12 +29,12 @@ class Widget_Openai(QFrame):#  Openai账号界面
         #设置“账号类型”标签
         self.labelx = QLabel( flags=Qt.WindowFlags())  
         self.labelx.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")#设置字体，大小，颜色
-        self.labelx.setText("账号类型")
+        self.labelx.setText("Account Type")
 
 
         #设置“账号类型”下拉选择框
         self.comboBox_account_type = ComboBox() #以demo为父类
-        self.comboBox_account_type.addItems(['免费账号',  '付费账号(等级1)',  '付费账号(等级2)',  '付费账号(等级3)',  '付费账号(等级4)',  '付费账号(等级5)'])
+        self.comboBox_account_type.addItems(['Free Account',  '付费账号(等级1)',  '付费账号(等级2)',  '付费账号(等级3)',  '付费账号(等级4)',  '付费账号(等级5)'])
         self.comboBox_account_type.setCurrentIndex(0) #设置下拉框控件（ComboBox）的当前选中项的索引为0，也就是默认选中第一个选项
         self.comboBox_account_type.setFixedSize(150, 35)
 
@@ -53,7 +53,7 @@ class Widget_Openai(QFrame):#  Openai账号界面
         #设置“模型选择”标签
         self.labelx = QLabel(flags=Qt.WindowFlags())  #parent参数表示父控件，如果没有父控件，可以将其设置为None；flags参数表示控件的标志，可以不传入
         self.labelx.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")#设置字体，大小，颜色
-        self.labelx.setText("模型选择")
+        self.labelx.setText("Model Selection")
 
 
         #设置“模型类型”下拉选择框
@@ -106,7 +106,7 @@ class Widget_Openai(QFrame):#  Openai账号界面
         #设置“代理地址”标签
         self.label_proxy_port = QLabel( flags=Qt.WindowFlags())  #parent参数表示父控件，如果没有父控件，可以将其设置为None；flags参数表示控件的标志，可以不传入
         self.label_proxy_port.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")#设置字体，大小，颜色
-        self.label_proxy_port.setText("系统代理")
+        self.label_proxy_port.setText("System Agent")
 
         #设置微调距离用的空白标签
         self.labelx = QLabel()  
@@ -131,11 +131,11 @@ class Widget_Openai(QFrame):#  Openai账号界面
 
 
         #设置“测试请求”的按钮
-        primaryButton_test = PrimaryPushButton('测试请求', self, FIF.SEND)
+        primaryButton_test = PrimaryPushButton('Test Request', self, FIF.SEND)
         primaryButton_test.clicked.connect(self.test_request) #按钮绑定槽函数
 
         #设置“保存配置”的按钮
-        primaryButton_save = PushButton('保存配置', self, FIF.SAVE)
+        primaryButton_save = PushButton('Save Configuration', self, FIF.SAVE)
         primaryButton_save.clicked.connect(self.saveconfig) #按钮绑定槽函数
 
 
@@ -168,7 +168,7 @@ class Widget_Openai(QFrame):#  Openai账号界面
 
     def saveconfig(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("已成功保存配置")
+        self.user_interface_prompter.createSuccessInfoBar("Configuration saved successfully")
 
 
     def test_request(self):
@@ -180,5 +180,5 @@ class Widget_Openai(QFrame):#  Openai账号界面
             Proxy_port = self.LineEdit_proxy_port.text()            #获取代理端口
 
             #创建子线程
-            thread = self.background_executor("接口测试","","","OpenAI",Base_url,Model_Type,API_key_str,Proxy_port)
+            thread = self.background_executor("Interface Testing","","","OpenAI",Base_url,Model_Type,API_key_str,Proxy_port)
             thread.start()

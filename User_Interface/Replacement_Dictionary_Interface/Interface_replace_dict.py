@@ -30,8 +30,8 @@ class Widget_replace_dict(QFrame):  # 替换字典主界面
         self.B_settings = Widget_after_dict('B_settings', self,configurator,user_interface_prompter)  # 创建实例，指向界面
 
         # 添加子界面到分段式导航栏
-        self.addSubInterface(self.A_settings, 'A_settings', '译前替换')
-        self.addSubInterface(self.B_settings, 'B_settings', '译后替换')
+        self.addSubInterface(self.A_settings, 'A_settings', 'pre-translational substitution')
+        self.addSubInterface(self.B_settings, 'B_settings', 'post-translational substitution')
 
         # 将分段式导航栏和堆叠式窗口添加到垂直布局中
         self.vBoxLayout.addWidget(self.pivot)
@@ -110,11 +110,11 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
 
 
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第二列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 1, button)
         button.clicked.connect(self.delete_blank_row)
 
@@ -127,19 +127,19 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
 
 
         #设置导入字典按钮
-        self.pushButton1 = PushButton('导入字典', self, FIF.DOWNLOAD)
+        self.pushButton1 = PushButton('Import Dictionary', self, FIF.DOWNLOAD)
         self.pushButton1.clicked.connect(self.Importing_dictionaries) #按钮绑定槽函数
 
-        #设置导出字典按钮
-        self.pushButton2 = PushButton('导出字典', self, FIF.SHARE)
+        #设置Export Dictionary按钮
+        self.pushButton2 = PushButton('Export Dictionary', self, FIF.SHARE)
         self.pushButton2.clicked.connect(self.Exporting_dictionaries) #按钮绑定槽函数
 
-        #设置清空字典按钮
-        self.pushButton3 = PushButton('清空字典', self, FIF.DELETE)
+        #设置Empty the dictionary按钮
+        self.pushButton3 = PushButton('Empty the dictionary', self, FIF.DELETE)
         self.pushButton3.clicked.connect(self.Empty_dictionary) #按钮绑定槽函数
 
-        #设置保存字典按钮
-        self.pushButton4 = PushButton('保存字典', self, FIF.SAVE)
+        #设置Save Dictionary按钮
+        self.pushButton4 = PushButton('Save Dictionary', self, FIF.SAVE)
         self.pushButton4.clicked.connect(self.Save_dictionary) #按钮绑定槽函数
 
 
@@ -163,16 +163,16 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
         #设置“译前替换”标签
         label1 = QLabel( flags=Qt.WindowFlags())  
         label1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label1.setText("原文替换")
+        label1.setText("Replacement of the original text")
 
         #设置“译前替换”显示
         self.label2 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label2.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label2.setText("(翻译前，将根据字典内容对原文文本进行替换)")
+        self.label2.setText("(Before translation, the original text will be replaced according to the contents of the dictionary)")
 
 
         #设置“译前替换”开
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling features')
         self.checkBox1.stateChanged.connect(self.checkBoxChanged1)
 
         layout2.addWidget(label1)
@@ -232,7 +232,7 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
         Input_File, _ = QFileDialog.getOpenFileName(None, 'Select File', '', 'All Files (*)')
 
         if Input_File:
-            print(f'[INFO] 已选择文件: {Input_File}')
+            print(f'[INFO] Selected documents: {Input_File}')
             # 获取文件后缀
             file_suffix = Input_File.split('.')[-1].lower()
             
@@ -244,19 +244,19 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
                     with open(Input_File, 'r', encoding="utf-8") as f:
                         content = f.read()
                 except FileNotFoundError:
-                    print(f'[ERROR] 文件未找到: {Input_File}')
+                    print(f'[ERROR] File not found: {Input_File}')
                     return
                 except Exception as e:
-                    print(f'[ERROR] 读取文件时发生未知错误: {str(e)}')
+                    print(f'[ERROR] Unknown error while reading file: {str(e)}')
                     return
                 try:
                     # 移除内容中的行内注释，并反序列化
                     dictionary = json.loads(self.remove_inline_comments(content))
                 except json.JSONDecodeError as e:
-                    print(f'[ERROR] JSON解析错误: {str(e)}')
+                    print(f'[ERROR] JSON parsing error: {str(e)}')
                     return
                 except Exception as e:
-                    print(f'[ERROR] 反序列化时发生未知错误: {str(e)}')
+                    print(f'[ERROR] Unknown error during deserialization: {str(e)}')
                     return       
 
                 # 将字典中的数据从表格底部添加到表格中
@@ -269,12 +269,12 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
                     self.tableView.setRowHeight(row, self.tableView.rowHeight(row-1))
 
 
-                # 导入成功后删除空白行
+                # Imported successfully后删除空白行
                 self.delete_blank_row()
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
 
 
             elif file_suffix == 'xlsx':
@@ -293,21 +293,21 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
                     #设置新行的高度与前一行相同
                     self.tableView.setRowHeight(row, self.tableView.rowHeight(row-1))
 
-                # 导入成功后删除空白行
+                # Imported successfully后删除空白行
                 self.delete_blank_row()
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
                     
             else:
-                print(f'[INFO] 不支持的文件类型: .{file_suffix}')
+                print(f'[INFO] Unsupported file types: .{file_suffix}')
 
         else:
-            print('[INFO] 未选择文件')
+            print('[INFO] No document selected')
             return        
     
-    #导出字典按钮
+    #Export Dictionary按钮
     def Exporting_dictionaries(self):
         #获取表格中从第一行到倒数第二行的数据，判断第一列或第二列是否为空，如果为空则不获取。如果不为空，则第一列作为key，第二列作为value，存储中间字典中
         data = []
@@ -327,19 +327,19 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
         # 选择文件保存路径
         Output_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Output_Folder:
-            print(f'[INFO]  已选择字典导出文件夹: {Output_Folder}')
+            print(f'[INFO]  Dictionary export folder selected: {Output_Folder}')
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
         # 将字典保存到文件中
         with open(os.path.join(Output_Folder, "用户译前替换字典.json"), 'w', encoding="utf-8") as f:
             json.dump(dictionary, f, ensure_ascii=False, indent=4)
 
-        self.user_interface_prompter.createSuccessInfoBar("导出成功")
-        print(f'[INFO]  已导出字典文件')
+        self.user_interface_prompter.createSuccessInfoBar("Export Successful")
+        print(f'[INFO]  已Export Dictionary文件')
 
-    #清空字典按钮
+    #Empty the dictionary按钮
     def Empty_dictionary(self):
         #清空表格
         self.tableView.clearContents()
@@ -347,28 +347,28 @@ class Widget_before_dict(QFrame):# 原文替换字典界面
         self.tableView.setRowCount(2)
         
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第二列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 1, button)
         button.clicked.connect(self.delete_blank_row)
 
-        self.user_interface_prompter.createSuccessInfoBar("清空成功")
-        print(f'[INFO]  已清空字典')
+        self.user_interface_prompter.createSuccessInfoBar("Empty successfully")
+        print(f'[INFO]  已Empty the dictionary')
 
-    #保存字典按钮
+    #Save Dictionary按钮
     def Save_dictionary(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("保存成功")
-        print(f'[INFO]  已保存字典')
+        self.user_interface_prompter.createSuccessInfoBar("Save Successful")
+        print(f'[INFO]  已Save Dictionary')
 
 
     #提示函数
     def checkBoxChanged1(self, isChecked: bool):
         if isChecked :
-            self.user_interface_prompter.createSuccessInfoBar("已开启译前替换功能，将依据表格内容进行替换")
+            self.user_interface_prompter.createSuccessInfoBar("Pre-translation substitution has been enabled and will be based on the contents of the table.")
     
 
 class Widget_after_dict(QFrame):# 译文修正字典界面
@@ -417,11 +417,11 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
 
 
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第二列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 1, button)
         button.clicked.connect(self.delete_blank_row)
 
@@ -434,19 +434,19 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
 
 
         #设置导入字典按钮
-        self.pushButton1 = PushButton('导入字典', self, FIF.DOWNLOAD)
+        self.pushButton1 = PushButton('Import Dictionary', self, FIF.DOWNLOAD)
         self.pushButton1.clicked.connect(self.Importing_dictionaries) #按钮绑定槽函数
 
-        #设置导出字典按钮
-        self.pushButton2 = PushButton('导出字典', self, FIF.SHARE)
+        #设置Export Dictionary按钮
+        self.pushButton2 = PushButton('Export Dictionary', self, FIF.SHARE)
         self.pushButton2.clicked.connect(self.Exporting_dictionaries) #按钮绑定槽函数
 
-        #设置清空字典按钮
-        self.pushButton3 = PushButton('清空字典', self, FIF.DELETE)
+        #设置Empty the dictionary按钮
+        self.pushButton3 = PushButton('Empty the dictionary', self, FIF.DELETE)
         self.pushButton3.clicked.connect(self.Empty_dictionary) #按钮绑定槽函数
 
-        #设置保存字典按钮
-        self.pushButton4 = PushButton('保存字典', self, FIF.SAVE)
+        #设置Save Dictionary按钮
+        self.pushButton4 = PushButton('Save Dictionary', self, FIF.SAVE)
         self.pushButton4.clicked.connect(self.Save_dictionary) #按钮绑定槽函数
 
 
@@ -470,16 +470,16 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
         #设置“译前替换”标签
         label1 = QLabel( flags=Qt.WindowFlags())  
         label1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label1.setText("译文修正")
+        label1.setText("Translation amendments")
 
         #设置“译前替换”显示
         self.label2 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label2.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label2.setText("(翻译完成后，根据字典内容对译文文本进行替换)")
+        self.label2.setText("(After the translation is complete, the translated text is replaced according to the contents of the dictionary)")
 
 
         #设置“译前替换”开
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling features')
         self.checkBox1.stateChanged.connect(self.checkBoxChanged1)
 
         layout2.addWidget(label1)
@@ -538,7 +538,7 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
         Input_File, _ = QFileDialog.getOpenFileName(None, 'Select File', '', 'All Files (*)')
 
         if Input_File:
-            print(f'[INFO] 已选择文件: {Input_File}')
+            print(f'[INFO] Selected documents: {Input_File}')
             # 获取文件后缀
             file_suffix = Input_File.split('.')[-1].lower()
             
@@ -550,19 +550,19 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
                     with open(Input_File, 'r', encoding="utf-8") as f:
                         content = f.read()
                 except FileNotFoundError:
-                    print(f'[ERROR] 文件未找到: {Input_File}')
+                    print(f'[ERROR] File not found: {Input_File}')
                     return
                 except Exception as e:
-                    print(f'[ERROR] 读取文件时发生未知错误: {str(e)}')
+                    print(f'[ERROR] Unknown error while reading file: {str(e)}')
                     return
                 try:
                     # 移除内容中的行内注释，并反序列化
                     dictionary = json.loads(self.remove_inline_comments(content))
                 except json.JSONDecodeError as e:
-                    print(f'[ERROR] JSON解析错误: {str(e)}')
+                    print(f'[ERROR] JSON parsing error: {str(e)}')
                     return
                 except Exception as e:
-                    print(f'[ERROR] 反序列化时发生未知错误: {str(e)}')
+                    print(f'[ERROR] Unknown error during deserialization: {str(e)}')
                     return       
 
                 # 将字典中的数据从表格底部添加到表格中
@@ -575,12 +575,12 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
                     self.tableView.setRowHeight(row, self.tableView.rowHeight(row-1))
 
 
-                # 导入成功后删除空白行
+                # Imported successfully后删除空白行
                 self.delete_blank_row()
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
 
 
             elif file_suffix == 'xlsx':
@@ -599,21 +599,21 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
                     #设置新行的高度与前一行相同
                     self.tableView.setRowHeight(row, self.tableView.rowHeight(row-1))
 
-                # 导入成功后删除空白行
+                # Imported successfully后删除空白行
                 self.delete_blank_row()
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
                     
             else:
-                print(f'[INFO] 不支持的文件类型: .{file_suffix}')
+                print(f'[INFO] Unsupported file types: .{file_suffix}')
 
         else:
-            print('[INFO] 未选择文件')
+            print('[INFO] No document selected')
             return    
     
-    #导出字典按钮
+    #Export Dictionary按钮
     def Exporting_dictionaries(self):
         #获取表格中从第一行到倒数第二行的数据，判断第一列或第二列是否为空，如果为空则不获取。如果不为空，则第一列作为key，第二列作为value，存储中间字典中
         data = []
@@ -633,19 +633,19 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
         # 选择文件保存路径
         Output_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Output_Folder:
-            print(f'[INFO]  已选择字典导出文件夹: {Output_Folder}')
+            print(f'[INFO]  Dictionary export folder selected: {Output_Folder}')
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
         # 将字典保存到文件中
         with open(os.path.join(Output_Folder, "用户译后修正字典.json"), 'w', encoding="utf-8") as f:
             json.dump(dictionary, f, ensure_ascii=False, indent=4)
 
-        self.user_interface_prompter.createSuccessInfoBar("导出成功")
-        print(f'[INFO]  已导出字典文件')
+        self.user_interface_prompter.createSuccessInfoBar("Export Successful")
+        print(f'[INFO]  已Export Dictionary文件')
 
-    #清空字典按钮
+    #Empty the dictionary按钮
     def Empty_dictionary(self):
         #清空表格
         self.tableView.clearContents()
@@ -653,26 +653,26 @@ class Widget_after_dict(QFrame):# 译文修正字典界面
         self.tableView.setRowCount(2)
         
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第二列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 1, button)
         button.clicked.connect(self.delete_blank_row)
 
-        self.user_interface_prompter.createSuccessInfoBar("清空成功")
-        print(f'[INFO]  已清空字典')
+        self.user_interface_prompter.createSuccessInfoBar("Empty successfully")
+        print(f'[INFO]  已Empty the dictionary')
 
-    #保存字典按钮
+    #Save Dictionary按钮
     def Save_dictionary(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("保存成功")
-        print(f'[INFO]  已保存字典')
+        self.user_interface_prompter.createSuccessInfoBar("Save Successful")
+        print(f'[INFO]  已Save Dictionary')
 
 
     #提示函数
     def checkBoxChanged1(self, isChecked: bool):
         if isChecked :
-            self.user_interface_prompter.createSuccessInfoBar("已开启译后修正功能，将依据表格内容进行修正")
+            self.user_interface_prompter.createSuccessInfoBar("The post-translation correction function has been enabled, and corrections will be made according to the contents of the form.")
     

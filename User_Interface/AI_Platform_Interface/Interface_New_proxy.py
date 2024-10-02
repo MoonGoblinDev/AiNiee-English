@@ -225,7 +225,7 @@ class Widget_Proxy_A(QFrame):#  代理账号基础设置子界面
         #设置“系统代理端口”标签
         self.label_proxy_port = QLabel( flags=Qt.WindowFlags())  #parent参数表示父控件，如果没有父控件，可以将其设置为None；flags参数表示控件的标志，可以不传入
         self.label_proxy_port.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")#设置字体，大小，颜色
-        self.label_proxy_port.setText("系统代理")
+        self.label_proxy_port.setText("System Agent")
 
         #设置微调距离用的空白标签
         self.label_null = QLabel()  
@@ -250,11 +250,11 @@ class Widget_Proxy_A(QFrame):#  代理账号基础设置子界面
 
 
         #设置“测试请求”的按钮
-        self.primaryButton_test = PrimaryPushButton('测试请求', self, FIF.SEND)
+        self.primaryButton_test = PrimaryPushButton('Test Request', self, FIF.SEND)
         self.primaryButton_test.clicked.connect(self.test_request) #按钮绑定槽函数
 
         #设置“保存配置”的按钮
-        self.primaryButton_save = PushButton('保存配置', self, FIF.SAVE)
+        self.primaryButton_save = PushButton('Save Configuration', self, FIF.SAVE)
         self.primaryButton_save.clicked.connect(self.saveconfig) #按钮绑定槽函数
 
 
@@ -308,7 +308,7 @@ class Widget_Proxy_A(QFrame):#  代理账号基础设置子界面
 
     def saveconfig(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("已成功保存配置")
+        self.user_interface_prompter.createSuccessInfoBar("Configuration saved successfully")
 
 
     def del_config(self):
@@ -339,7 +339,7 @@ class Widget_Proxy_A(QFrame):#  代理账号基础设置子界面
                 Model_Type = self.comboBox_model_anthropic.currentText()
 
             #创建子线程
-            thread = self.background_executor("接口测试","","",Proxy_platform,Base_url,Model_Type,API_key_str,Proxy_port)
+            thread = self.background_executor("Interface Testing","","",Proxy_platform,Base_url,Model_Type,API_key_str,Proxy_port)
             thread.start()
 
 

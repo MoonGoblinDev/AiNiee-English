@@ -31,7 +31,7 @@ class Widget_world_building(QFrame): # 背景设定界面
         self.label2.setText("(全程加入)")
 
 
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling features')
         #self.checkBox1.stateChanged.connect(self.checkBoxChanged1)
 
         layout1.addWidget(label1)

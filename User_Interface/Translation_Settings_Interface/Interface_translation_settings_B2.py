@@ -25,7 +25,7 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
         #设置“简繁转换开关”标签
         labe1_6 = QLabel(flags=Qt.WindowFlags())  
         labe1_6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        labe1_6.setText("使用思维链翻译")
+        labe1_6.setText("Translation using thought chains")
 
        #设置“简繁体自动转换”选择开关
         self.SwitchButton_cot_toggle = SwitchButton(parent=self)    
@@ -46,7 +46,7 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
         #设置“简繁转换开关”标签
         labe1_6 = QLabel(flags=Qt.WindowFlags())  
         labe1_6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        labe1_6.setText("使用中文提示词")
+        labe1_6.setText("Use of Chinese prompts")
 
        #设置“简繁体自动转换”选择开关
         self.SwitchButton_cn_prompt_toggle = SwitchButton(parent=self)    
@@ -67,7 +67,7 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
         #设置标签
         labe1_4 = QLabel(flags=Qt.WindowFlags())  
         labe1_4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        labe1_4.setText("处理首尾非文本字符")
+        labe1_4.setText("Handling of first and last non-text characters")
 
 
 
@@ -92,7 +92,7 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
         #设置“简繁转换开关”标签
         labe1_6 = QLabel(flags=Qt.WindowFlags())  
         labe1_6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        labe1_6.setText("中文字形转换")
+        labe1_6.setText("Chinese character conversion")
 
 
         #设置“OpenCC 配置”下拉选择框
@@ -124,7 +124,7 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
         #设置“换行符保留”标签
         labe1_6 = QLabel(flags=Qt.WindowFlags())  
         labe1_6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        labe1_6.setText("换行替换后翻译")
+        labe1_6.setText("line break and post-translation")
 
        #设置“换行符保留”选择开关
         self.SwitchButton_line_breaks = SwitchButton(parent=self)    
@@ -160,4 +160,4 @@ class Widget_translation_settings_B2(QFrame):#  专项设置子界面
     #设置选择开关绑定函数
     def on_clear(self, isChecked: bool):
         if isChecked:
-            self.user_interface_prompter.createWarningInfoBar("仅支持翻译日语文本时生效，建议翻译T++导出文件时开启")
+            self.user_interface_prompter.createWarningInfoBar("Only supports translation of Japanese text, and is recommended to be enabled when translating T++ exported files.")

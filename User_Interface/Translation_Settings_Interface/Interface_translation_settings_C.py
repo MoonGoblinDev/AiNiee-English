@@ -27,7 +27,7 @@ class Widget_translation_settings_C(QFrame):#  混合翻译设置子界面
         #设置标签
         self.labe1_4 = QLabel(flags=Qt.WindowFlags())  
         self.labe1_4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        self.labe1_4.setText("启用混合平台翻译功能")
+        self.labe1_4.setText("Enabling Mixed Platform Translation")
 
 
 
@@ -75,15 +75,15 @@ class Widget_translation_settings_C(QFrame):#  混合翻译设置子界面
     #设置开关绑定函数
     def test(self, isChecked: bool):
         if isChecked:
-            self.user_interface_prompter.createWarningInfoBar("请注意，开启该开关下面设置才会生效，并且会覆盖部分基础设置")
+            self.user_interface_prompter.createWarningInfoBar("Please note that the following settings will only take effect if this switch is turned on, and will override some of the basic settings")
 
 class SettingCard_A(ExpandGroupSettingCard):
 
     def __init__(self, parent=None):
-        super().__init__(FluentIcon.SPEED_OFF, "首轮平台", "第一轮翻译使用的AI平台", parent)
+        super().__init__(FluentIcon.SPEED_OFF, "First round of platforms", "AI platform used for the first round of translations", parent)
 
         # 第一组
-        self.translationPlatform_label = BodyLabel("翻译平台")
+        self.translationPlatform_label = BodyLabel("Translation Platform")
         self.translationPlatform_comboBox = ComboBox()
         self.translationPlatform_comboBox.addItems(['OpenAI',  'Google', 'Anthropic',  'Cohere',  'Moonshot',  'Deepseek',  'Dashscope', 'Volcengine', '零一万物',  '智谱',  'SakuraLLM',  '代理平台A'])
         self.translationPlatform_comboBox.setFixedWidth(160)
@@ -114,12 +114,12 @@ class SettingCard_A(ExpandGroupSettingCard):
 class SettingCard_B(ExpandGroupSettingCard):
 
     def __init__(self, parent=None,user_interface_prompter=None):
-        super().__init__(FluentIcon.SPEED_MEDIUM, "次轮平台", "第二轮翻译使用的AI平台", parent)
+        super().__init__(FluentIcon.SPEED_MEDIUM, "Sub-round platforms", "AI platform used for the second round of translations", parent)
         self.user_interface_prompter = user_interface_prompter
 
 
         # 第一组
-        self.translationPlatform_label = BodyLabel("翻译平台")
+        self.translationPlatform_label = BodyLabel("Translation Platform")
         self.translationPlatform_comboBox = ComboBox()
         self.translationPlatform_comboBox.addItems(['OpenAI',  'Google', 'Anthropic',  'Cohere',  'Moonshot',  'Deepseek',  'Dashscope', 'Volcengine', '零一万物',  '智谱',  'SakuraLLM',  '代理平台A'])
         self.translationPlatform_comboBox.setFixedWidth(160)
@@ -127,19 +127,19 @@ class SettingCard_B(ExpandGroupSettingCard):
 
 
         # 第二组
-        self.customModel_label = BodyLabel("重选模型")
-        self.customModel_Button = SwitchButton("关", self, IndicatorPosition.RIGHT)
-        self.customModel_Button.setOnText("开")
+        self.customModel_label = BodyLabel("Reselection models")
+        self.customModel_Button = SwitchButton("Off.", self, IndicatorPosition.RIGHT)
+        self.customModel_Button.setOnText("On.")
         self.customModel_Button.checkedChanged.connect(self.test)
         # 第三组
-        self.modeLabel = BodyLabel("模型名称")
+        self.modeLabel = BodyLabel("Model name")
         self.model_type = LineEdit()
         self.model_type.setFixedWidth(160)
 
         # 第四组
-        self.textSplitting_label = BodyLabel("文本对半拆分")
-        self.textSplitting_Button = SwitchButton("关", self, IndicatorPosition.RIGHT)
-        self.textSplitting_Button.setOnText("开")
+        self.textSplitting_label = BodyLabel("Split text in half")
+        self.textSplitting_Button = SwitchButton("Off.", self, IndicatorPosition.RIGHT)
+        self.textSplitting_Button.setOnText("On.")
 
 
         # 调整内部布局
@@ -170,15 +170,15 @@ class SettingCard_B(ExpandGroupSettingCard):
     #设置开关绑定函数
     def test(self, isChecked: bool):
         if isChecked:
-            self.user_interface_prompter.createWarningInfoBar("请注意，不在平台配置里的预设模型会出现问题")
+            self.user_interface_prompter.createWarningInfoBar("Please note that predefined models that are not in the platform configuration will have problems")
 
 class SettingCard_C(ExpandGroupSettingCard):
 
     def __init__(self, parent=None):
-        super().__init__(FluentIcon.SPEED_HIGH, "末轮平台", "后续轮次翻译都使用的AI平台", parent)
+        super().__init__(FluentIcon.SPEED_HIGH, "Last round of platforms", "AI platform used for all subsequent rounds of translation", parent)
 
         # 第一组
-        self.translationPlatform_label = BodyLabel("翻译平台")
+        self.translationPlatform_label = BodyLabel("Translation Platform")
         self.translationPlatform_comboBox = ComboBox()
         self.translationPlatform_comboBox.addItems(['OpenAI',  'Google', 'Anthropic',  'Cohere',  'Moonshot',  'Deepseek',  'Dashscope', 'Volcengine', '零一万物',  '智谱',  'SakuraLLM',  '代理平台A'])
         self.translationPlatform_comboBox.setFixedWidth(160)
@@ -186,19 +186,19 @@ class SettingCard_C(ExpandGroupSettingCard):
 
 
         # 第二组
-        self.customModel_label = BodyLabel("重选模型")
-        self.customModel_Button = SwitchButton("关", self, IndicatorPosition.RIGHT)
-        self.customModel_Button.setOnText("开")
+        self.customModel_label = BodyLabel("Reselection models")
+        self.customModel_Button = SwitchButton("Off.", self, IndicatorPosition.RIGHT)
+        self.customModel_Button.setOnText("On.")
 
         # 第三组
-        self.modeLabel = BodyLabel("模型名称")
+        self.modeLabel = BodyLabel("Model name")
         self.model_type = LineEdit()
         self.model_type.setFixedWidth(160)
 
         # 第四组
-        self.textSplitting_label = BodyLabel("文本对半拆分")
-        self.textSplitting_Button = SwitchButton("关", self, IndicatorPosition.RIGHT)
-        self.textSplitting_Button.setOnText("开")
+        self.textSplitting_label = BodyLabel("Split text in half")
+        self.textSplitting_Button = SwitchButton("Off.", self, IndicatorPosition.RIGHT)
+        self.textSplitting_Button.setOnText("On.")
 
 
         # 调整内部布局

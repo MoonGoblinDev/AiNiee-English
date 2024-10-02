@@ -21,15 +21,15 @@ class Widget_writing_style(QFrame): # 写作风格界面
 
         label1 = QLabel( flags=Qt.WindowFlags())  
         label1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label1.setText("添加文风设定")
+        label1.setText("Add style settings")
 
 
         self.label2 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label2.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label2.setText("(全程加入)")
+        self.label2.setText("(full join)")
 
 
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling features')
         #self.checkBox1.stateChanged.connect(self.checkBoxChanged1)
 
         layout1.addWidget(label1)

@@ -27,8 +27,8 @@ class Widget_start_translation(QFrame):  # 开始翻译主界面
         self.B_settings = Widget_start_translation_B('B_settings', self,configurator,user_interface_prompter,background_executor)  # 创建实例，指向界面
 
         # 添加子界面到分段式导航栏
-        self.addSubInterface(self.A_settings, 'A_settings', '开始翻译')
-        self.addSubInterface(self.B_settings, 'B_settings', '备份功能')
+        self.addSubInterface(self.A_settings, 'A_settings', 'Start translation')
+        self.addSubInterface(self.B_settings, 'B_settings', 'Backup function')
 
         # 将分段式导航栏和堆叠式窗口添加到垂直布局中
         self.vBoxLayout.addWidget(self.pivot)
@@ -81,11 +81,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label111 = QLabel(flags=Qt.WindowFlags())
         self.label111.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label111.setText("项目类型 :")
+        self.label111.setText("Project Type :")
 
         self.translation_project = QLabel(flags=Qt.WindowFlags())
         self.translation_project.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.translation_project.setText("无")
+        self.translation_project.setText("None")
 
         layout_horizontal_1.addWidget(self.label111)
         layout_horizontal_1.addStretch(1)  # 添加伸缩项
@@ -97,11 +97,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label222 = QLabel(flags=Qt.WindowFlags())
         self.label222.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label222.setText("项目ID :")
+        self.label222.setText("Project ID :")
 
         self.project_id = QLabel(flags=Qt.WindowFlags())
         self.project_id.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.project_id.setText("无")
+        self.project_id.setText("None")
 
         layout_horizontal_2.addWidget(self.label222)
         layout_horizontal_2.addStretch(1)  # 添加伸缩项
@@ -125,11 +125,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label333 = QLabel(flags=Qt.WindowFlags())
         self.label333.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label333.setText("总文本行数 :")
+        self.label333.setText("Total lines of text :")
 
         self.total_text_line_count = QLabel(flags=Qt.WindowFlags())
         self.total_text_line_count.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.total_text_line_count.setText("无")
+        self.total_text_line_count.setText("None")
 
         layout_horizontal_3.addWidget(self.label333)
         layout_horizontal_3.addStretch(1)  # 添加伸缩项
@@ -141,11 +141,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label444 = QLabel(flags=Qt.WindowFlags())
         self.label444.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label444.setText("已翻译行数 :")
+        self.label444.setText("Lines translated :")
 
         self.translated_line_count = QLabel(flags=Qt.WindowFlags())
         self.translated_line_count.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.translated_line_count.setText("无")
+        self.translated_line_count.setText("None")
 
         layout_horizontal_4.addWidget(self.label444)
         layout_horizontal_4.addStretch(1)  # 添加伸缩项
@@ -172,11 +172,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.labelx1 = QLabel(flags=Qt.WindowFlags())
         self.labelx1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.labelx1.setText("已花费tokens :")
+        self.labelx1.setText("Spent tokens :")
 
         self.tokens_spent = QLabel(flags=Qt.WindowFlags())
         self.tokens_spent.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.tokens_spent.setText("无")
+        self.tokens_spent.setText("None")
 
         layout_horizontal_5.addWidget(self.labelx1)
         layout_horizontal_5.addStretch(1)  # 添加伸缩项
@@ -188,11 +188,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.labelx2 = QLabel(flags=Qt.WindowFlags())
         self.labelx2.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.labelx2.setText("已花费金额(＄) :")
+        self.labelx2.setText("Amount spent(＄) :")
 
         self.amount_spent = QLabel(flags=Qt.WindowFlags())
         self.amount_spent.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.amount_spent.setText("无")
+        self.amount_spent.setText("None")
 
         layout_horizontal_6.addWidget(self.labelx2)
         layout_horizontal_6.addStretch(1)  # 添加伸缩项
@@ -216,11 +216,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.labelx111 = QLabel(flags=Qt.WindowFlags())
         self.labelx111.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.labelx111.setText("运行状态 :")
+        self.labelx111.setText("operational status :")
 
         self.running_status = QLabel(flags=Qt.WindowFlags())
         self.running_status.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.running_status.setText("无")
+        self.running_status.setText("None")
 
         layout_horizontal_7.addWidget(self.labelx111)
         layout_horizontal_7.addStretch(1)  # 添加伸缩项
@@ -232,11 +232,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.labelx222 = QLabel(flags=Qt.WindowFlags())
         self.labelx222.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.labelx222.setText("子线程数 :")
+        self.labelx222.setText("Number of sub-threads :")
 
         self.thread_count = QLabel(flags=Qt.WindowFlags())
         self.thread_count.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.thread_count.setText("无")
+        self.thread_count.setText("None")
 
         layout_horizontal_8.addWidget(self.labelx222)
         layout_horizontal_8.addStretch(1)  # 添加伸缩项
@@ -260,11 +260,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label9 = QLabel(flags=Qt.WindowFlags())
         self.label9.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label9.setText("翻译速度(token/s) :")
+        self.label9.setText("Translation speed(token/s) :")
 
         self.translation_speed_token = QLabel(flags=Qt.WindowFlags())
         self.translation_speed_token.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.translation_speed_token.setText("无")
+        self.translation_speed_token.setText("None")
 
         layout_horizontal_9.addWidget(self.label9)
         layout_horizontal_9.addStretch(1)  # 添加伸缩项
@@ -276,11 +276,11 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
         self.label10 = QLabel(flags=Qt.WindowFlags())
         self.label10.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.label10.setText("翻译速度(line/s) :")
+        self.label10.setText("Translation speed(line/s) :")
 
         self.translation_speed_line = QLabel(flags=Qt.WindowFlags())
         self.translation_speed_line.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")  # 设置字体，大小，颜色
-        self.translation_speed_line.setText("无")
+        self.translation_speed_line.setText("None")
 
         layout_horizontal_10.addWidget(self.label10)
         layout_horizontal_10.addStretch(1)  # 添加伸缩项
@@ -303,7 +303,7 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
         #设置“翻译进度”标签
         self.label_progressRing = QLabel( flags=Qt.WindowFlags())  
         self.label_progressRing.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")#设置字体，大小，颜色
-        self.label_progressRing.setText("翻译进度")
+        self.label_progressRing.setText("Progress in translation")
 
         #设置翻译进度条
         self.progressRing = ProgressRing(self)
@@ -328,25 +328,25 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
 
 
         #设置“开始翻译”的按钮
-        self.primaryButton_start_translation = PrimaryPushButton('开始翻译', self, FIF.PLAY)
+        self.primaryButton_start_translation = PrimaryPushButton('Start translation', self, FIF.PLAY)
         self.primaryButton_start_translation.clicked.connect(self.Start_translation) #按钮绑定槽函数
 
 
         #设置“暂停翻译”的按钮
-        self.primaryButton_pause_translation = PrimaryPushButton('暂停翻译', self, FIF.PAUSE)
+        self.primaryButton_pause_translation = PrimaryPushButton('Pause', self, FIF.PAUSE)
         self.primaryButton_pause_translation.clicked.connect(self.pause_translation) #按钮绑定槽函数
         #隐藏按钮
         self.primaryButton_pause_translation.hide()
 
         #设置“继续翻译”的按钮
-        self.primaryButton_continue_translation = PrimaryPushButton('继续翻译', self, FIF.ROTATE)
+        self.primaryButton_continue_translation = PrimaryPushButton('Continue', self, FIF.ROTATE)
         self.primaryButton_continue_translation.clicked.connect(self.continue_translation) #按钮绑定槽函数
         #隐藏按钮
         self.primaryButton_continue_translation.hide()
 
 
         #设置“终止翻译”的按钮
-        self.primaryButton_terminate_translation = PushButton('取消翻译', self, FIF.CANCEL)
+        self.primaryButton_terminate_translation = PushButton('Cancel', self, FIF.CANCEL)
         self.primaryButton_terminate_translation.clicked.connect(self.terminate_translation) #按钮绑定槽函数
 
 
@@ -394,7 +394,7 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
             self.primaryButton_pause_translation.show()
 
             #创建子线程
-            thread = self.background_executor("开始翻译","","","","","","","")
+            thread = self.background_executor("Start translation","","","","","","","")
             thread.start()
 
 
@@ -422,7 +422,7 @@ class Widget_start_translation_A(QFrame):#  开始翻译子界面
             self.primaryButton_pause_translation.show()
 
             # 创建子线程
-            thread = self.background_executor("开始翻译","","","","","","","")
+            thread = self.background_executor("Start translation","","","","","","","")
             thread.start()
 
     
@@ -459,10 +459,10 @@ class Widget_start_translation_B(QFrame):#  开始翻译子界面
 
         label1 = QLabel( flags=Qt.WindowFlags())  
         label1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label1.setText("自动备份缓存文件到输出文件夹")
+        label1.setText("Automatic backup of cache files to output folder")
 
 
-        self.checkBox_switch = CheckBox('启用功能')
+        self.checkBox_switch = CheckBox('Enabling features')
         self.checkBox_switch.stateChanged.connect(self.checkBoxChanged1)
 
         layout_switch.addWidget(label1)
@@ -480,11 +480,11 @@ class Widget_start_translation_B(QFrame):#  开始翻译子界面
         #设置“导出当前任务的缓存文件”标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("导出当前任务的缓存文件")
+        label4.setText("Export the cache file for the current task")
 
 
         #设置导出当前任务的缓存文件按钮
-        self.pushButton_export_cache_file_path = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_export_cache_file_path = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_export_cache_file_path.clicked.connect(self.output_cachedata) #按钮绑定槽函数
 
 
@@ -503,11 +503,11 @@ class Widget_start_translation_B(QFrame):#  开始翻译子界面
         #设置“导出当前任务的已翻译文本”标签
         label6 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label6.setText("导出当前任务的已翻译文本")
+        label6.setText("Exporting translated text for the current task")
 
 
         #设置导出当前任务的已翻译文本按钮
-        self.pushButton_export_translated_file_path = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_export_translated_file_path = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_export_translated_file_path.clicked.connect(self.output_data) #按钮绑定槽函数
 
 
@@ -559,7 +559,7 @@ class Widget_start_translation_B(QFrame):#  开始翻译子界面
                 print('[INFO]  未存在缓存文件')
                 return  # 直接返回，不执行后续操作
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
 
@@ -579,6 +579,6 @@ class Widget_start_translation_B(QFrame):#  开始翻译子界面
                 print('[INFO]  未存在缓存文件')
                 return  # 直接返回，不执行后续操作
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 

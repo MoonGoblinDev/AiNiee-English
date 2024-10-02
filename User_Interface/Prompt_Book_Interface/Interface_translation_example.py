@@ -24,7 +24,7 @@ class Widget_translation_example(QFrame): # 翻译示例界面
         self.tableView.setRowCount(2) #设置表格行数
         self.tableView.setColumnCount(2) #设置表格列数
         #self.tableView.verticalHeader().hide() #隐藏垂直表头
-        self.tableView.setHorizontalHeaderLabels(['原文', '译文']) #设置水平表头
+        self.tableView.setHorizontalHeaderLabels(['Original', 'Translation']) #设置水平表头
         self.tableView.resizeColumnsToContents() #设置列宽度自适应内容
         self.tableView.resizeRowsToContents() #设置行高度自适应内容
         self.tableView.setEditTriggers(QAbstractItemView.AllEditTriggers)   # 设置所有单元格可编辑
@@ -35,11 +35,11 @@ class Widget_translation_example(QFrame): # 翻译示例界面
         #self.tableView.setSortingEnabled(True)  #设置表格可排序
 
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第三列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 1, button)
         button.clicked.connect(self.delete_blank_row)
 
@@ -52,16 +52,16 @@ class Widget_translation_example(QFrame): # 翻译示例界面
         #设置“译时提示”标签
         label3 = QLabel( flags=Qt.WindowFlags())  
         label3.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label3.setText("添加翻译示例")
+        label3.setText("Add translation example")
 
         #设置“译时提示”显示
         self.label4 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label4.setText("(全程加入)")
+        self.label4.setText("(full join)")
 
 
         #设置“译时提示”开
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling features')
         #self.checkBox2.stateChanged.connect(self.checkBoxChanged2)
 
         layout3.addWidget(label3)

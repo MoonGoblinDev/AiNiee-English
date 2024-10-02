@@ -37,11 +37,11 @@ class Widget_characterization(QFrame): # 角色介绍页面
         self.tableView.setBorderRadius(8) # 将表格组件的边角半径设置为x像素，从而实现圆角效果。
         
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第三列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 6, button)
         button.clicked.connect(self.delete_blank_row)
 
@@ -54,16 +54,16 @@ class Widget_characterization(QFrame): # 角色介绍页面
         #设置“译时提示”标签
         label3 = QLabel( flags=Qt.WindowFlags())  
         label3.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label3.setText("添加角色设定")
+        label3.setText("Add Character Setting")
 
         #设置“译时提示”显示
         self.label4 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label4.setText("(文本中出现了角色原名触发)")
+        self.label4.setText("(Character original name trigger appears in the text)")
 
 
         #设置“译时提示”开
-        self.checkBox1 = CheckBox('启用功能')
+        self.checkBox1 = CheckBox('Enabling Functions')
         #self.checkBox2.stateChanged.connect(self.checkBoxChanged2)
 
         layout3.addWidget(label3)

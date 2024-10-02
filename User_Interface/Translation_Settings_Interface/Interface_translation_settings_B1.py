@@ -27,7 +27,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
         #设置标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("每次翻译")
+        label4.setText("Each translation")
 
         self.spinBox_lines_limit = SpinBox(self)
         self.spinBox_lines_limit.setRange(0, 99999)    
@@ -40,7 +40,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
 
 
         # 设置开关
-        self.checkBox_lines_limit_switch = CheckBox('使用行数模式', self)
+        self.checkBox_lines_limit_switch = CheckBox('Using row count mode', self)
         self.checkBox_lines_limit_switch.setChecked(True)
         self.checkBox_lines_limit_switch.stateChanged.connect(self.on_lines)
 
@@ -60,7 +60,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
         #设置标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("每次翻译")
+        label4.setText("Each translation")
 
         self.spinBox_tokens_limit = SpinBox(self)
         self.spinBox_tokens_limit.setRange(0, 99999)    
@@ -94,7 +94,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
         #设置标签
         label1 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label1.setText("携带上文行数")
+        label1.setText("Carrying the number of lines of text")
 
 
         #设置数值输入框
@@ -118,12 +118,12 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
         #设置“最大线程数”标签
         label1_7 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label1_7.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label1_7.setText("最大线程数")
+        label1_7.setText("Maximum number of threads")
 
         #设置“说明”显示
         label2_7 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label2_7.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px")
-        label2_7.setText("(0是自动根据电脑设置线程数)")  
+        label2_7.setText("(0 is automatically setting the number of threads according to the computer)")  
 
        #设置“最大线程数”数值输入框
         self.spinBox_thread_count = SpinBox(self)
@@ -146,7 +146,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
 
         label1_7 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label1_7.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label1_7.setText("错误重翻最大次数限制")
+        label1_7.setText("Maximum number of error re-turns")
 
 
         # 设置数值输入框
@@ -169,7 +169,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
 
         label1_7 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label1_7.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label1_7.setText("翻译流程最大轮次限制")
+        label1_7.setText("Maximum round limit for translation process")
 
 
         # 设置数值输入框
@@ -206,7 +206,7 @@ class Widget_translation_settings_B1(QFrame):#  发送设置子界面
     #设置选择开关绑定函数
     def on_clear(self, isChecked: bool):
         if isChecked:
-            self.user_interface_prompter.createWarningInfoBar("仅支持翻译日语文本时生效，建议翻译T++导出文件时开启")
+            self.user_interface_prompter.createWarningInfoBar("Only supports translation of Japanese text, and is recommended to be enabled when translating T++ exported files.")
 
     #设互斥开关函数
     def on_lines(self, isChecked: bool):

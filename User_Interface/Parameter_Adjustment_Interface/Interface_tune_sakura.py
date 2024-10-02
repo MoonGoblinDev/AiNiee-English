@@ -27,9 +27,9 @@ class Widget_tune_sakura(QFrame):# sakura调教界面
         #设置“启用实时参数”标签
         label0 = QLabel(flags=Qt.WindowFlags())  
         label0.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label0.setText("实时改变AI参数")
+        label0.setText("Changing AI parameters in real time")
 
-        #设置官方文档说明链接按钮
+        #设置Official Docs说明链接按钮
         hyperlinkButton = HyperlinkButton(
             url='https://github.com/SakuraLLM/Sakura-13B-Galgame',
             text='(Github主页)'
@@ -61,7 +61,7 @@ class Widget_tune_sakura(QFrame):# sakura调教界面
         #设置“温度”副标签
         label11 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label11.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 10px;  color: black")
-        label11.setText("(官方默认值为0.1)")
+        label11.setText("(The official default value is 0.1)")
 
         #设置“温度”滑动条
         self.slider1 = Slider(Qt.Horizontal, self)
@@ -105,7 +105,7 @@ class Widget_tune_sakura(QFrame):# sakura调教界面
         #设置“top_p”副标签
         label41 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label41.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 10px;  color: black")
-        label41.setText("(官方默认值为0.3)")
+        label41.setText("(The official default value is 0.3)")
 
 
         #设置“top_p”滑动条
@@ -153,7 +153,7 @@ class Widget_tune_sakura(QFrame):# sakura调教界面
         #设置“presence_penalty”副标签
         label91 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label91.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 10px;  color: black")
-        label91.setText("(官方默认值为0)")
+        label91.setText("(The official default value is 0)")
 
         #设置“frequency_penalty”滑动条
         self.slider4 = Slider(Qt.Horizontal, self)

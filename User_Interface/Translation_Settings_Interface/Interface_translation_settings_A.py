@@ -26,7 +26,7 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“翻译平台”标签
         self.labelx = QLabel( flags=Qt.WindowFlags())  
         self.labelx.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")#设置字体，大小，颜色
-        self.labelx.setText("翻译平台")
+        self.labelx.setText("Translation Platform")
 
 
         #设置“翻译平台”下拉选择框
@@ -49,12 +49,12 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“翻译项目”标签
         self.labelx = QLabel( flags=Qt.WindowFlags())  
         self.labelx.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px; ")#设置字体，大小，颜色
-        self.labelx.setText("翻译项目")
+        self.labelx.setText("Translation Project")
 
 
         #设置“翻译项目”下拉选择框
         self.comboBox_translation_project = ComboBox() #以demo为父类
-        self.comboBox_translation_project.addItems(['Mtool导出文件',  'T++导出文件', 'VNText导出文件', 'ParaTranz导出文件', 'Epub小说文件' , 'Txt小说文件' , 'Srt字幕文件' , 'Lrc音声文件', 'Ainiee缓存文件'])
+        self.comboBox_translation_project.addItems(['Mtool export file', 'T++ export file', 'VNText export file', 'ParaTranz export file', 'Epub novel file' , 'Txt novel file' , 'Srt subtitle file' , 'Lrc Audio files', 'Ainiee cache files'])
         self.comboBox_translation_project.setCurrentIndex(0) #设置下拉框控件（ComboBox）的当前选中项的索引为0，也就是默认选中第一个选项
         self.comboBox_translation_project.setFixedSize(150, 35)
 
@@ -72,15 +72,15 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“输入文件夹”标签
         label4 = QLabel(flags=Qt.WindowFlags())  
         label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label4.setText("输入文件夹")
+        label4.setText("Input Folder")
 
         #设置“输入文件夹”显示
         self.label_input_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_input_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px")
-        self.label_input_path.setText("(请选择原文文件所在的文件夹，不要混杂其他文件)")  
+        self.label_input_path.setText("(Please select the folder where the original documents are located and do not mix them with other documents.)")  
 
         #设置打开文件按钮
-        self.pushButton_input = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_input = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_input.clicked.connect(self.Select_project_folder) #按钮绑定槽函数
 
 
@@ -100,15 +100,15 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“输出文件夹”标签
         label6 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label6.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label6.setText("输出文件夹")
+        label6.setText("output folder")
 
         #设置“输出文件夹”显示
         self.label_output_path = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label_output_path.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label_output_path.setText("(请选择翻译文件存放的文件夹)")
+        self.label_output_path.setText("(Please select the folder where the translation files are stored)")
 
         #设置输出文件夹按钮
-        self.pushButton_output = PushButton('选择文件夹', self, FIF.FOLDER)
+        self.pushButton_output = PushButton('Select Folder', self, FIF.FOLDER)
         self.pushButton_output.clicked.connect(self.Select_output_folder) #按钮绑定槽函数
 
 
@@ -133,11 +133,11 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“文本源语言”标签
         label3 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label3.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label3.setText("文本源语言")
+        label3.setText("text source language")
 
         #设置“文本源语言”下拉选择框
         self.comboBox_source_text = ComboBox() #以demo为父类
-        self.comboBox_source_text.addItems(['日语', '英语', '韩语', '俄语', '简中', '繁中'])
+        self.comboBox_source_text.addItems(['Japanese', 'English', 'Korean', 'Russian', 'Simplified Chinese', 'Traditional Chinese'])
         self.comboBox_source_text.setCurrentIndex(0) #设置下拉框控件（ComboBox）的当前选中项的索引为0，也就是默认选中第一个选项
         self.comboBox_source_text.setFixedSize(127, 30)
 
@@ -156,11 +156,11 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         #设置“文本目标语言”标签
         label3_1 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label3_1.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;  color: black")
-        label3_1.setText("文本目标语言")
+        label3_1.setText("text target language")
 
         #设置“文本目标语言”下拉选择框
         self.comboBox_translated_text = ComboBox() #以demo为父类
-        self.comboBox_translated_text.addItems(['简中', '繁中', '日语', '英语', '韩语'])
+        self.comboBox_translated_text.addItems(['Simplified Chinese', 'Traditional Chinese', 'Japanese', 'English', 'Korean'])
         self.comboBox_translated_text.setCurrentIndex(0) #设置下拉框控件（ComboBox）的当前选中项的索引为0，也就是默认选中第一个选项
         self.comboBox_translated_text.setFixedSize(127, 30)
 
@@ -176,7 +176,7 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
         layout_save = QHBoxLayout()
 
         #设置“保存配置”的按钮
-        self.primaryButton_save = PushButton('保存配置', self, FIF.SAVE)
+        self.primaryButton_save = PushButton('Save Configuration', self, FIF.SAVE)
         self.primaryButton_save.clicked.connect(self.saveconfig) #按钮绑定槽函数
 
 
@@ -217,9 +217,9 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
             # 将输入路径存储到配置器中
             self.configurator.Input_Folder = Input_Folder
             self.label_input_path.setText(Input_Folder)
-            print('[INFO]  已选择项目文件夹: ',Input_Folder)
+            print('[INFO]  Project folder selected: ',Input_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
 
 
 
@@ -230,12 +230,12 @@ class Widget_translation_settings_A(QFrame):#  基础设置子界面
             # 将输入路径存储到配置器中
             self.configurator.Output_Folder = Output_Folder
             self.label_output_path.setText(Output_Folder)
-            print('[INFO]  已选择输出文件夹:' ,Output_Folder)
+            print('[INFO]  Output folder selected:' ,Output_Folder)
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
 
 
     def saveconfig(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("已成功保存配置")
+        self.user_interface_prompter.createSuccessInfoBar("Configuration saved successfully")
 

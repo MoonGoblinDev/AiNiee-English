@@ -28,12 +28,12 @@ class Widget_tune_cohere(QFrame):# cohere调教界面
         #设置“启用实时参数”标签
         label0 = QLabel(flags=Qt.WindowFlags())  
         label0.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px")
-        label0.setText("实时改变AI参数")
+        label0.setText("Changing AI parameters in real time")
 
-        #设置官方文档说明链接按钮
+        #设置Official Docs说明链接按钮
         hyperlinkButton = HyperlinkButton(
             url='https://dashboard.cohere.com/',
-            text='(官方文档)'
+            text='(Official Docs)'
         )
 
         #设置“启用实时参数”开关
@@ -63,7 +63,7 @@ class Widget_tune_cohere(QFrame):# cohere调教界面
         #设置“温度”副标签
         label11 = QLabel(parent=self, flags=Qt.WindowFlags())  
         label11.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 10px;  color: black")
-        label11.setText("(官方默认值为0)")
+        label11.setText("(The official default value is 0)")
 
         #设置“温度”滑动条
         self.slider1 = Slider(Qt.Horizontal, self)

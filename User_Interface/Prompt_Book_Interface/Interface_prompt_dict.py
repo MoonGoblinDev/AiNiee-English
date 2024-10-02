@@ -30,7 +30,7 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         self.tableView.setRowCount(2) #设置表格行数
         self.tableView.setColumnCount(3) #设置表格列数
         #self.tableView.verticalHeader().hide() #隐藏垂直表头
-        self.tableView.setHorizontalHeaderLabels(['原文', '译文', '备注']) #设置水平表头
+        self.tableView.setHorizontalHeaderLabels(['Raw', 'Translations', 'Note']) #设置水平表头
         self.tableView.resizeColumnsToContents() #设置列宽度自适应内容
         self.tableView.resizeRowsToContents() #设置行高度自适应内容
         self.tableView.setEditTriggers(QAbstractItemView.AllEditTriggers)   # 设置所有单元格可编辑
@@ -43,11 +43,11 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         self.tableView.setBorderRadius(8) # 将表格组件的边角半径设置为x像素，从而实现圆角效果。
 
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第三列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 2, button)
         button.clicked.connect(self.delete_blank_row)
 
@@ -60,19 +60,19 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
 
 
         #设置导入字典按钮
-        self.pushButton1 = PushButton('导入字典', self, FIF.DOWNLOAD)
+        self.pushButton1 = PushButton('Import Dictionary', self, FIF.DOWNLOAD)
         self.pushButton1.clicked.connect(self.Importing_dictionaries) #按钮绑定槽函数
 
-        #设置导出字典按钮
-        self.pushButton2 = PushButton('导出字典', self, FIF.SHARE)
+        #设置Export Dictionary按钮
+        self.pushButton2 = PushButton('Export Dictionary', self, FIF.SHARE)
         self.pushButton2.clicked.connect(self.Exporting_dictionaries) #按钮绑定槽函数
 
-        #设置清空字典按钮
-        self.pushButton3 = PushButton('清空字典', self, FIF.DELETE)
+        #设置Empty the dictionary按钮
+        self.pushButton3 = PushButton('Empty the dictionary', self, FIF.DELETE)
         self.pushButton3.clicked.connect(self.Empty_dictionary) #按钮绑定槽函数
 
-        #设置保存字典按钮
-        self.pushButton4 = PushButton('保存字典', self, FIF.SAVE)
+        #设置Save Dictionary按钮
+        self.pushButton4 = PushButton('Save Dictionary', self, FIF.SAVE)
         self.pushButton4.clicked.connect(self.Save_dictionary) #按钮绑定槽函数
 
 
@@ -96,16 +96,16 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         #设置“译时提示”标签
         label3 = QLabel( flags=Qt.WindowFlags())  
         label3.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 17px;")
-        label3.setText("添加提示字典")
+        label3.setText("Adding a hint dictionary")
 
         #设置“译时提示”显示
         self.label4 = QLabel(parent=self, flags=Qt.WindowFlags())  
         self.label4.setStyleSheet("font-family: 'Microsoft YaHei'; font-size: 11px;  color: black")
-        self.label4.setText("(原文触发，自动构建术语表)")
+        self.label4.setText("(Original text triggers, automatic glossary construction)")
 
 
         #设置“译时提示”开
-        self.checkBox2 = CheckBox('启用功能')
+        self.checkBox2 = CheckBox('Enabling features')
         self.checkBox2.stateChanged.connect(self.checkBoxChanged2)
 
         layout3.addWidget(label3)
@@ -165,7 +165,7 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         Input_File, _ = QFileDialog.getOpenFileName(None, 'Select File', '', 'All Files (*)')
 
         if Input_File:
-            print(f'[INFO] 已选择文件: {Input_File}')
+            print(f'[INFO] Selected documents: {Input_File}')
             # 获取文件后缀
             file_suffix = Input_File.split('.')[-1].lower()
             
@@ -225,8 +225,8 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
                         self.add_to_table(key, value,info)
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
 
 
             elif file_suffix == 'xlsx':
@@ -240,17 +240,17 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
                     self.add_to_table(cell_value1, cell_value2,cell_value3)
 
                 # 输出日志
-                self.user_interface_prompter.createSuccessInfoBar("导入成功")
-                print(f'[INFO]  已导入字典文件')
+                self.user_interface_prompter.createSuccessInfoBar("Imported successfully")
+                print(f'[INFO]  Imported dictionary file')
                 
             else:
-                print(f'[INFO] 不支持的文件类型: .{file_suffix}')
+                print(f'[INFO] Unsupported file types: .{file_suffix}')
 
         else:
-            print('[INFO] 未选择文件')
+            print('[INFO] No document selected')
             return        
         
-    #导出字典按钮
+    #Export Dictionary按钮
     def Exporting_dictionaries(self):
         #获取表格中从第一行到倒数第二行的数据，判断第一列或第二列是否为空，如果为空则不获取。如果不为空，则第一列作为key，第二列作为value，存储中间字典中
         dictionary = []
@@ -271,19 +271,19 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         # 选择文件保存路径
         Output_Folder = QFileDialog.getExistingDirectory(None, 'Select Directory', '')      #调用QFileDialog类里的函数来选择文件目录
         if Output_Folder:
-            print(f'[INFO]  已选择字典导出文件夹: {Output_Folder}')
+            print(f'[INFO]  Dictionary export folder selected: {Output_Folder}')
         else :
-            print('[INFO]  未选择文件夹')
+            print('[INFO]  No folder selected')
             return  # 直接返回，不执行后续操作
 
         # 将字典保存到文件中
         with open(os.path.join(Output_Folder, "用户提示字典.json"), 'w', encoding="utf-8") as f:
             json.dump(dictionary, f, ensure_ascii=False, indent=4)
 
-        self.user_interface_prompter.createSuccessInfoBar("导出成功")
-        print(f'[INFO]  已导出字典文件')
+        self.user_interface_prompter.createSuccessInfoBar("Export Successful")
+        print(f'[INFO]  Exported Dictionary file')
 
-    #清空字典按钮
+    #Empty the dictionary按钮
     def Empty_dictionary(self):
         #清空表格
         self.tableView.clearContents()
@@ -291,25 +291,25 @@ class Widget_prompt_dict(QFrame): # 术语字典界面
         self.tableView.setRowCount(2)
         
         # 在表格最后一行第一列添加"添加行"按钮
-        button = PushButton('添新行')
+        button = PushButton('New Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 0, button)
         button.clicked.connect(self.add_row)
         # 在表格最后一行第三列添加"删除空白行"按钮
-        button = PushButton('删空行')
+        button = PushButton('Delete Blank Line')
         self.tableView.setCellWidget(self.tableView.rowCount()-1, 2, button)
         button.clicked.connect(self.delete_blank_row)
 
-        self.user_interface_prompter.createSuccessInfoBar("清空成功")
-        print(f'[INFO]  已清空字典')
+        self.user_interface_prompter.createSuccessInfoBar("Empty successfully")
+        print(f'[INFO]  已Empty the dictionary')
 
-    #保存字典按钮
+    #Save Dictionary按钮
     def Save_dictionary(self):
         self.user_interface_prompter.read_write_config("write",self.configurator.resource_dir)
-        self.user_interface_prompter.createSuccessInfoBar("保存成功")
-        print(f'[INFO]  已保存字典')
+        self.user_interface_prompter.createSuccessInfoBar("Save Successful")
+        print(f'[INFO]  已Save Dictionary')
 
     
     #消息提示函数
     def checkBoxChanged2(self, isChecked: bool):
         if isChecked :
-            self.user_interface_prompter.createSuccessInfoBar("已开启术语字典功能")
+            self.user_interface_prompter.createSuccessInfoBar("Terminology Dictionary enabled")
