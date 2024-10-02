@@ -1,81 +1,71 @@
-<p align="center">
-  <a href="https://github.com/NEKOparapa/AiNiee-chatgpt">
-    <img src="https://github.com/NEKOparapa/AiNiee-chatgpt/blob/main/Example%20image/logo.png" width=60% height=60%>
-  </a>
-<p>
+## Software Introduction 🧾
 
----
-
-
-## 软件介绍🧾 
-
-  
 <p align="center">
   
-  **AiNiee 是一款专注于Ai翻译的工具，可以用来一键自动翻译RPG SLG游戏，Epub TXT小说，Srt Lrc字幕等等**
+  **AiNiee is a tool dedicated to AI translation. It can be used to automatically translate RPG SLG games, Epub/TXT novels, Srt/Lrc subtitles, and more with a single click.**
 </p>
 
 
-* **多格式支持**: json/xlsx导出文件、Epub/TXT 小说、Srt/Lrc 字幕等。
-* **多平台接入**: 支持国内外主流AI接口平台，可方便快速使用OpenAI、Google、Anthropic、Deepseek、智谱等平台的接口。
-* **多语言翻译**:  支持多种语言的互相翻译，例如中文、英文、日文、韩文、俄语等。
-* **灵活配置**: 自定义请求格式、平台、模型、翻译行数、线程数等。
-* **高效翻译**: 拥有多文件批量翻译、多线程翻译、多key轮询、混合平台翻译等功能。
-* **翻译优化**: 思维链翻译、动态Few-Shot、提示书编写、上文自携带、文本自适应处理、回复检查等。
+* **Multiple format support**: json/xlsx export files, Epub/TXT novels, Srt/Lrc subtitles, etc.
+* **Multi-platform access**: Supports mainstream domestic and international AI interface platforms, allowing for convenient and fast access to APIs from OpenAI, Google, Anthropic, Deepseek, Zhipu, and other platforms.
+* **Multilingual translation**: Supports translation between multiple languages, such as Chinese, English, Japanese, Korean, Russian, etc.
+* **Flexible configuration**: Customize request format, platform, model, number of lines to translate, number of threads, etc.
+* **Efficient translation**: Features multi-file batch translation, multi-threaded translation, multi-key polling, mixed platform translation, and more.
+* **Translation optimization**: Chain-of-thought translation, dynamic Few-Shot, prompt book writing, context carrying, text adaptive processing, response checking, etc.
 
 ---
 
 
-##  工具准备[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#工具准备)
+## Tool Preparation [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#tool-preparation)
    
- * **`📖文本提取工具`**
+ * **`📖 Text Extraction Tools`**
 
 
-      |工具名|介绍|
+      | Tool Name | Description |
       |:----:|:-----:|
-      |[Mtool](https://afdian.com/p/d42dd1e234aa11eba42452540025c377)|上手简单，推荐新人使用|
-      |[Translator++](https://dreamsavior.net/download/)|上手中等，功能强大，推荐大佬使用|
-      |[SExtractor](https://github.com/satan53x/SExtractor)|上手复杂，功能强大，推荐大佬使用|
+      |[Mtool](https://afdian.com/p/d42dd1e234aa11eba42452540025c377)| Easy to learn, recommended for beginners |
+      |[Translator++](https://dreamsavior.net/download/)| Moderate learning curve, powerful features, recommended for advanced users |
+      |[SExtractor](https://github.com/satan53x/SExtractor)| Steep learning curve, powerful features, recommended for advanced users |
 
    
- * **`🤖AI调用平台`**
+ * **`🤖 AI Calling Platforms`**
 
-      |支持平台|模型|白嫖情况|模型价格|限制情况|
+      | Supported Platform | Model | Free Tier | Model Price | Limitations |
       |:-----:|:-----:|:-----:|:-----:|:-----:|
-      |[OpenAI平台](https://platform.openai.com/)|ChatGPT系列|现无免费额度|贵|用途广泛|
-      |[GooGle平台](https://makersuite.google.com/app/apikey?hl=zh-cn)|Gemini系列|免费账号可白嫖，速度缓慢|贵|安全限制|
-      |[Cohere平台](https://dashboard.cohere.com/)|Command系列|免费账号可白嫖，速度一般|一般|用途广泛|
-      |[Anthropic平台](https://console.anthropic.com/dashboard)|Claude系列|免费账号绑卡可白嫖少量额度，速度缓慢|贵|用途广泛|
-      |[月之暗面平台](https://platform.moonshot.cn/console/info)|Moonshot系列|注册送少量免费额度|一般|用途广泛|
-      |[零一万物平台](https://platform.lingyiwanwu.com/playground)|Yi系列|注册送少量免费额度|一般|安全限制|
-      |[智谱平台](https://open.bigmodel.cn/overview)|GLM系列|注册送少量免费额度|一般|安全限制|
-      |[Deepseek平台](https://platform.deepseek.com/usage)|Deepseek系列|注册送少量免费额度，速度极快|便宜|用途广泛|
-      |[Dashscope平台](https://dashscope.console.aliyun.com/playground) |千问系列|注册送大量免费额度|便宜|安全限制|
-      |[Volcengine平台](https://console.volcengine.com/ark)|豆包系列|注册送大量免费额度，速度极快|便宜|安全限制|
-      |[SakuraLLM](https://github.com/SakuraLLM/SakuraLLM)  |Sakura系列|需自行部署模型 [点击查看一键包](https://github.com/neavo/SakuraLLMServer) |免费|用途广泛|
+      |[OpenAI Platform](https://platform.openai.com/)|ChatGPT series|Currently no free tier|Expensive|Wide range of applications|
+      |[GooGle Platform](https://makersuite.google.com/app/apikey?hl=zh-cn)|Gemini series|Free accounts have a free tier, slow speed|Expensive|Safety restrictions|
+      |[Cohere Platform](https://dashboard.cohere.com/)|Command series|Free accounts have a free tier, average speed|Moderate|Wide range of applications|
+      |[Anthropic Platform](https://console.anthropic.com/dashboard)|Claude series|Free accounts with a linked card get a small free tier, slow speed|Expensive|Wide range of applications|
+      |[Moonshot Platform](https://platform.moonshot.cn/console/info)|Moonshot series|Sign-up bonus with a small free tier|Moderate|Wide range of applications|
+      |[Lingyi Wanwu Platform](https://platform.lingyiwanwu.com/playground)|Yi series|Sign-up bonus with a small free tier|Moderate|Safety restrictions|
+      |[Zhipu Platform](https://open.bigmodel.cn/overview)|GLM series|Sign-up bonus with a small free tier|Moderate|Safety restrictions|
+      |[Deepseek Platform](https://platform.deepseek.com/usage)|Deepseek series|Sign-up bonus with a small free tier, very fast speed|Cheap|Wide range of applications|
+      |[Dashscope Platform](https://dashscope.console.aliyun.com/playground) |Qianwen series|Sign-up bonus with a large free tier|Cheap|Safety restrictions|
+      |[Volcengine Platform](https://console.volcengine.com/ark)|Doubao series|Sign-up bonus with a large free tier, very fast speed|Cheap|Safety restrictions|
+      |[SakuraLLM](https://github.com/SakuraLLM/SakuraLLM)  |Sakura series|Requires self-deployment of the model [Click to see one-click package](https://github.com/neavo/SakuraLLMServer) |Free|Wide range of applications|
 
 
- * **`📺视频教程`**
+ * **`📺 Video Tutorials`**
 
-      |视频链接|说明|
+      | Video Link | Description |
       |:----:|:-----:|
-      |[Mtool教程](https://www.bilibili.com/video/BV1h6421c7MA) |初次使用推荐观看|
-      |[T++教程](https://www.bilibili.com/video/BV18c411K7WN?p=2)|初次使用推荐观看|
+      |[Mtool Tutorial](https://www.bilibili.com/video/BV1h6421c7MA) | Recommended for first-time users |
+      |[T++ Tutorial](https://www.bilibili.com/video/BV18c411K7WN?p=2)| Recommended for first-time users |
 
-* **`📖 角色提取工具`**: [KeywordGacha - 翻译辅助工具](https://github.com/neavo/KeywordGacha)
+* **`📖 Character Extraction Tool`**: [KeywordGacha - Translation Assistant Tool](https://github.com/neavo/KeywordGacha)
 
-* **`💽 本地模型一键包`**: [SakuraLLMServer - 一键运行 SakuraLLM 获得免费且高质量的翻译能力](https://github.com/neavo/SakuraLLMServer)
+* **`💽 Local Model One-Click Package`**: [SakuraLLMServer - Run SakuraLLM in one click to obtain free and high-quality translation capabilities](https://github.com/neavo/SakuraLLMServer)
 
-* **`📡 下载地址`**: [AiNiee下载地址](https://github.com/NEKOparapa/AiNiee/releases)
+* **`📡 Download Address`**: [AiNiee Download Address](https://github.com/NEKOparapa/AiNiee/releases)
 
-* **`🟪 魔法工具`**:**强烈建议**您选择优质稳定的代理工具,不然接口会报错Connection eror或者一直没有回复
-   
+* **`🟪 Magical Tool`**: **It is strongly recommended** that you choose a high-quality and stable proxy tool, otherwise, the interface will report Connection error or there will be no response
+
 ---
 
 <details>
 <summary>
   
-## 使用方法[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#使用方法)
+## Usage [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#usage)
 </summary>
 
 
@@ -83,55 +73,55 @@
 <details>
 <summary>
 
-### 账号配置
+### Account Configuration
 </summary>
 
-*  OpenAI官方配置示例:
+* OpenAI Official Configuration Example:
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/官方账号设置.png" width="600" height="400"><br>
   
-    >`账号类型`: 新注册的5刀余额账号为免费账号，有各种限制，单号速度不快；付费账号是有过付费记录，且达到一些条件才会升级<br>
+    >`Account Type`: Newly registered accounts with a $5 balance are free accounts with various limitations and slow single-account speed; paid accounts are those that have a history of payment and have met certain conditions to be upgraded<br>
   
-    > `模型选择`: 默认是GPT3.5模型，请自行了解模型之间的区别后再进行更改。<br>
+    > `Model Selection`: The default is the GPT3.5 model, please understand the differences between models before making changes.<br>
   
-    >`API KEY`: 填入由OpenAi账号生成的api_key<br>
+    >`API KEY`: Enter the api_key generated by your OpenAI account<br>
   
-    >`代理端口`: 可以不输入,如果需要设置代理时,再则填入http://<代理ip>:<代理端口>,示例：`http://127.0.0.1:10081`<br>
+    >`Proxy Port`: Can be left blank, only fill in when you need to set up a proxy, in the format http://<proxy ip>:<proxy port>, example: `http://127.0.0.1:10081`<br>
 
-*  代理平台配置示例:
+* Proxy Platform Configuration Example:
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/代理账号设置.png" width="600" height="400"><br> 
     
-    >`请求地址`: 填入国内代理平台提供的请求地址,示例：`https://api.openai-sb.com` ,不要在后面单带一个`/`
+    >`Request Address`: Fill in the request address provided by the domestic proxy platform, for example: `https://api.openai-sb.com`, do not add a single `/` at the end
 
-    >`自动补全`: 会在上面输入的请求地址自动补全“v1”
+    >`Auto-complete`: Will automatically append "v1" to the request address entered above
     
-    >`请求格式`: 根据中转能够支持的请求格式进行选择，一般是openai格式
+    >`Request Format`: Select the request format supported by the relay, usually the OpenAI format
 
-    >`模型选择`: 可下拉选择，也可以自行填入模型名字<br>
+    >`Model Selection`: Can be selected from the dropdown or entered manually<br>
 
-    >`API KEY`: 填入国内代理平台给你生成的API KEY<br>
+    >`API KEY`: Enter the API KEY generated by the domestic proxy platform<br>
 
-    >`代理端口`: 可以不输入,如果需要设置代理时,再则填入http://<代理ip>:<代理端口>,示例：`http://127.0.0.1:10081`<br>
+    >`Proxy Port`: Can be left blank, only fill in when you need to set up a proxy, in the format http://<proxy ip>:<proxy port>, example: `http://127.0.0.1:10081`<br>
 
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/代理账号速率价格设置.png" width="600" height="400"><br> 
 
-    >`每次发送文本上限`: 限制每次发送文本的容量大小，以tokens为单位
+    >`Maximum Text Limit per Send`: Limits the size of text sent each time, in tokens
   
-    >`每分钟请求数`: RPM (requests per minute)每分钟向openai发送的翻译任务数量
+    >`Requests per Minute`: RPM (requests per minute), the number of translation tasks sent to OpenAI per minute
   
-    >`每分钟tokens数`: TPM (tokens per minute)每分钟向openai发送的tokens总数（类似字符总数）
+    >`Tokens per Minute`: TPM (tokens per minute), the total number of tokens sent to OpenAI per minute (similar to the total number of characters)
 
-    >`请求输入价格`: 根据代理平台设定的价格进行设置，单位是每1k tokens
+    >`Request Input Price`: Set according to the price set by the proxy platform, in units of per 1k tokens
     
-    >`回复输出价格`: 根据代理平台设定的价格进行设置，单位是每1k tokens
+    >`Reply Output Price`: Set according to the price set by the proxy platform, in units of per 1k tokens
 
-*  SakuraLLM配置:
+* SakuraLLM Configuration:
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Sakura/SakuraLLM.png" width="600" height="400"><br>
 
-    > 1.模型部署方法：https://github.com/SakuraLLM/Sakura-13B-Galgame/wiki<br>
+    > 1. Model deployment method: https://github.com/SakuraLLM/Sakura-13B-Galgame/wiki<br>
 
-    > 2.SakuraLLM 性能优化指南：https://github.com/NEKOparapa/AiNiee/blob/main/SakuraLLMScript/OptimizationGuide.md<br>
+    > 2. SakuraLLM Performance Optimization Guide: https://github.com/NEKOparapa/AiNiee/blob/main/SakuraLLMScript/OptimizationGuide.md<br>
 
-    > 3.部署好模型后，获取接口地址，如：http://127.0.0.1:6006    填入请求地址栏中，注意，接口地址后面不要包含其他内容，比如空格或者"/"，否则会报错<br>
+    > 3. After deploying the model, get the interface address, for example: http://127.0.0.1:6006. Fill it in the request address bar. Note that the interface address should not contain other content, such as spaces or "/", otherwise an error will be reported<br>
 
 
 </details>
@@ -141,61 +131,61 @@
 <details>
 <summary> 
 
-### 翻译配置
+### Translation Configuration
 </summary>
 
-*   配置示例:<br>
+* Configuration Example:<br>
 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/翻译设置/基础设置.png" width="600" height="400"><br>
     
-    >`翻译项目`: 需要翻译的原文文件<br>
+    >`Translation Project`: The original text file that needs to be translated<br>
 
-    >`翻译平台`: 翻译文本时希望使用的平台<br>
+    >`Translation Platform`: The platform you wish to use when translating text<br>
 
-    >`文本源语言`: 根据你需要翻译游戏的语言选择相应的源语言<br>
+    >`Source Language`: Select the corresponding source language based on the language of the game you need to translate<br>
 
-    >`文本目标语言`: 你希望翻译成的语言<br>
+    >`Target Language`: The language you want to translate into<br>
   
-    >`输入文件夹`: 选择你需要翻译的原文文件,把原文尽量放在一个干净的文件夹内，文件夹内没有其他文件，因为会读取该文件夹内所有相关的文件，包括子文件<br>
+    >`Input Folder`: Select the original text file you need to translate. Place the original text in a clean folder as much as possible, without other files in the folder, as it will read all relevant files in the folder, including subfolders<br>
   
-    >`输出文件夹`: 选择翻译后文件的存储文件夹，请不要和输入文件夹一个路径<br>
+    >`Output Folder`: Select the folder to store the translated files. Please do not use the same path as the input folder<br>
 
 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/翻译设置/发送设置.png" width="600" height="400"><br>
 
-    >`每次翻译行数`: 每次请求翻译的文本行数。行数设置越大,整体的翻译效果会更好,上下文更加流畅,但每次请求回复速度会越慢,回复的内容越容易出错，请根据模型类型来进行设置。<br>
+    >`Lines per Translation`: The number of lines of text to translate per request. The larger the number of lines, the better the overall translation effect will be, and the context will be more fluent. However, the slower the response speed of each request, and the more likely the content of the response will be incorrect. Please set it according to the model type.<br>
 
-    >`每次翻译tokens数`: 每次请求翻译的文本tokens数，整体效果和行数模式差不多，只不过这个可以更加精确控制发送的大小，从而提高效率<br>
+    >`Tokens per Translation`: The number of tokens of text to translate per request. The overall effect is similar to the line mode, but this can more accurately control the size of the sent text, thereby improving efficiency<br>
 
-    >`最大线程数`: 请根据翻译平台的速率进行设置，线程数越大，越容易吃满速率限制，翻译速度越快。多出的线程数不会影响翻译，但会增加电脑性能消耗<br>
+    >`Maximum Thread Count`: Please set this according to the speed of the translation platform. The larger the number of threads, the easier it is to reach the speed limit, and the faster the translation speed. Excess threads will not affect translation but will increase computer performance consumption<br>
 
-    >`错误重翻最大次数限制`: 就是一段文本，出现错误回复时，最多允许重复翻译的次数<br>  
+    >`Maximum Error Retranslation Limit`: This is the maximum number of times a piece of text can be re-translated if an error occurs in the response<br>  
     
-    >`翻译流程最大轮次限制`: 有些在上一轮始终无法成功翻译的文本会进行拆分，并进入下一轮次翻译，如此循环翻译。所以是限制循环拆分的最大轮次数<br>  
+    >`Maximum Translation Process Round Limit`: Some texts that cannot be successfully translated in a previous round will be split and enter the next round of translation, cycling in this way. Therefore, this limits the maximum number of rounds of the splitting cycle<br>  
 
 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/翻译设置/专项设置.png" width="600" height="400"><br>
 
-    >`使用思维链翻译`: 会与提示书功能进行联动，让AI主动思考已经提供的上文，角色，背景等等信息，当然消耗会翻倍，并且建议在高性能模型下使用。<br>
+    >`Use Chain of Thought Translation`: Will interact with the prompt book function to make AI actively think about the provided context, characters, background, and other information. Of course, the consumption will double, and it is recommended to use it with high-performance models.<br>
 
-    >`使用中文提示词`: 会更改发送的prompt结构为全中文结构，部分大模型会在中文提示词下表现更优。<br>
+    >`Use Chinese Prompts`: Will change the sent prompt structure to a full Chinese structure. Some large models perform better under Chinese prompts.<br>
 
-    >`换行替换后翻译`: 在翻译前将换行符替换成特殊字符，再进行翻译，AI仍会吞符号，不是百分百保留。<br>
+    >`Replace Newlines Before Translation`: Replace newline characters with special characters before translation. AI will still swallow symbols, it is not 100% preserved.<br>
 
-    >`中文字体转换`: 可以将翻译后的中文字体进行简体，繁体，香港体等待进行转换。配置文件说明，请参考 https://github.com/BYVoid/OpenCC<br>
+    >`Chinese Font Conversion`: Can convert the translated Chinese fonts to simplified, traditional, Hong Kong, etc. For configuration file instructions, please refer to https://github.com/BYVoid/OpenCC<br>
 
-    >`处理首尾非文本字符`: 主要用于T++导出的文本，该工具导出的文本带很多代码文本，可以截取处理了首尾的占位代码等，翻译了，再复原回来<br>
+    >`Handle Non-text Characters at the Beginning and End`: Mainly used for text exported by T++. The text exported by this tool has a lot of code text. You can intercept and process the placeholder codes at the beginning and end, translate them, and then restore them<br>
 
 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/翻译设置/混合翻译设置.png" width="600" height="400"><br>
 
-    >`首轮翻译平台`: 文本会首先以当初设置的翻译行数进行翻译， 如果翻译时出现错误回复次数达到限制，则进入下轮次再次翻译<br>
+    >`First Round Translation Platform`: The text will be translated first according to the initially set number of lines. If the number of error responses during translation reaches the limit, it will enter the next round for another translation<br>
 
-    >`次轮翻译平台`: 将之前没能成功翻译的文本拆分翻译，会重新自动计算翻译行数，并更换翻译平台，如果不设置，则沿用上轮设置的翻译平台<br>
+    >`Second Round Translation Platform`: The text that was not successfully translated previously will be split and translated. It will automatically recalculate the number of lines to translate and change the translation platform. If not set, it will use the translation platform set in the previous round<br>
 
-    >`末轮翻译平台`: 后续的所有轮次都使用该次指定的翻译平台，如果不设置，则沿用上轮设置的翻译平台<br>
+    >`Last Round Translation Platform`: All subsequent rounds will use the translation platform specified in this round. If not set, it will use the translation platform set in the previous round<br>
 
-    >`更换轮次时不拆分`: 更换翻译轮次时不会对文本进行拆分，继续按设置行数翻译<br>  
+    >`Do Not Split When Changing Rounds`: When changing translation rounds, the text will not be split, but will continue to be translated according to the set number of lines<br>  
 
 </details>
 
@@ -206,28 +196,28 @@
 <details>
 <summary>
   
-### 如果使用MTOOL进行游戏翻译
+### How to Use MTOOL for Game Translation
 </summary>
 
-*  1.使用Mtool打开游戏,并在翻译功能界面,选择导出游戏原文文件,会在游戏根目录生成：ManualTransFile.json<br>
+* 1. Open the game with Mtool, and in the translation function interface, select "Export Original Game File". This will generate ManualTransFile.json in the game's root directory<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/导出原文1.png" width="600" height="400"> | 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/导出原文2.png" width="600" height="400"><br>
   
-*  2.在`翻译设置`界面的`翻译项目`选择`🔵Mtool导出文件`,并配置翻译设置<br>
-    >配置示例:<br>
+* 2. In the `Translation Settings` interface, select `🔵Mtool Export File` for `Translation Project` and configure the translation settings<br>
+    >Configuration Example:<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/翻译设置Mtool.png" width="600" height="400"><br>
     
   
-* 3.🖱️到开始翻译页面，点击**开始翻译**按钮,看控制台输出日志或者进度条。之后等待翻译进度到百分百,自动生成翻译好的文件在输出文件夹中
-    > 正在进行翻译<br>
+* 3. 🖱️ Go to the Start Translation page, click the **Start Translation** button, and check the console output log or progress bar.  Wait for the translation progress to reach 100%, the translated file will be automatically generated in the output folder
+    > Translation in progress<br>
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/UI界面正在翻译.png"  width="600" height="400">
    
 
-    > 已经完成翻译<br>
+    > Translation completed<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/UI界面翻译完成.png" width="600" height="400">
 
 
-* 4.回到`🔵Mtool`工具,依然在翻译功能界面,选择加载翻译文件,选择翻译后的文件即可
+* 4. Go back to the `🔵Mtool` tool, still in the translation function interface, select "Load Translation File", and choose the translated file
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Mtool/导入译文.png" width="600" height="400"> 
 
 </details>
@@ -238,40 +228,40 @@
 <details>
 <summary>
   
-### 如果使用T++进行游戏翻译
+### How to Use T++ for Game Translation
 </summary>
   
-* 1.🖱️打开`🔴Translator++`,选择“start a new project”,根据你的游戏图标来选择对应的游戏引擎<br>
+* 1. 🖱️ Open `🔴Translator++`, select "Start a new project", and choose the corresponding game engine according to your game icon<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/新建工程1.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/新建工程2.png" width="600" height="400"><br>
     
-* 2.选择你的游戏文件,创建新工程,软件会自动解包和导入游戏数据<br>
+* 2. Select your game file, create a new project, the software will automatically unpack and import game data<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/新建工程3.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/新建工程4.png" width="600" height="400">
     
-    > 当弹出提示框,问你：**Do you  also want to load JavaScript files**时,选择**Cancel**,加载脚本里的文本修改容易出错
+    > When a prompt box pops up asking you: **Do you also want to load JavaScript files**, select **Cancel**. Modifying the text loaded from the script can easily lead to errors
 
-* 3.🖱️点"Options"按钮,选择"Preferences",选择"UI Language",选择简体中文,方便之后操作<br>
+* 3. 🖱️ Click the "Options" button, select "Preferences", select "UI Language", and choose Simplified Chinese for easier operation later<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/汉化设置1.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/汉化设置2.png" width="600" height="400"><br>
     
-* 4.点左上角的导出工程,选择导出格式为XML格式到你指定的文件夹,生成data文件夹<br>
+* 4. Click "Export Project" in the top left corner, select XML format as the export format and choose your designated folder. This will create a data folder<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/导出工程1.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/导出工程2.png" width="600" height="400">
     
-    > 当弹出提示框,问如何处理标记列,就点击红色和选择**Do not process row with selected tag**,或者不设置直接导出,因为这工具暂时存在bug,无法过滤标记内容
+    > When a prompt box pops up asking how to handle tagged columns, click the red color and select **Do not process row with selected tag**, or do not configure it and export directly, as this tool currently has a bug and cannot filter tagged content
     
-* 5.在`翻译设置`界面的`翻译项目`选择`🔴T++导出文件`,配置翻译设置<br>
-    > 配置示例<br>
+* 5. In the `Translation Settings` interface, select `🔴T++ Export File` for `Translation Project` and configure the translation settings<br>
+    > Configuration Example<br>
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/翻译配置Tpp.png" width="600" height="400"><br>
-    > `项目文件夹`: 选择之前`🔴Translator++`导出的项目文件夹data<br>
-    > `输出文件夹`: 选择翻译后项目文件夹的存储文件夹<br>
+    > `Project Folder`: Select the project folder data exported by `🔴Translator++` earlier<br>
+    > `Output Folder`: Select the folder to store the translated project folder<br>
 
     
-* 6.🖱️到开始翻译页面，点**开始翻译**按钮,等待翻译进度到百分百,生成翻译好的data文件夹在输出文件夹中<br>
-    > 1.回到`🔴Translator++`+,点击导入工程,选择从电子表格导入翻译,点击“Import Folder”,选择输出文件夹里的data文件夹,点击导入<br>
+* 6. 🖱️ Go to the Start Translation page, click the **Start Translation** button, and wait for the translation progress to reach 100%. The translated data folder will be generated in the output folder<br>
+    > 1. Go back to `🔴Translator++`, click "Import Project", select "Import Translation from Spreadsheet", click "Import Folder", choose the data folder in the output folder, and click "Import"<br>
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/导入工程1.png" width="600" height="400"> | 
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/导入工程2.png" width="600" height="400"><br>
 
-    > 2.🖱️右键左侧区域,移到"全部选择",选择"Create Automation",选择"对每行",复制粘贴下面的代码运行<br>
+    > 2. 🖱️ Right-click on the left area, move to "Select All", select "Create Automation", select "For Each Row", and copy and paste the code below to run<br>
   
-* 7.对**红色标签内容进行修改**,这些内容不能翻译,以免游戏脚本出现错误。
+* 7. Modify the **content with red tags**. This content cannot be translated to avoid errors in the game script.
   ```JavaScript
   if (this.tags) {
     if (this.tags.includes("red")) this.cells[1]=this.cells[0];
@@ -279,9 +269,9 @@
   ```
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/处理错误1.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/处理错误2.png" width="600" height="400">
   
-   > 3.查看左边文件有哪个没有到达百分百的,寻找到空行并自行翻译
+   > 3. Check if any files on the left have not reached 100%, find the blank lines and translate them manually
   
-* 8.最后选择导出工程,选择导出到文件夹,指定**你的游戏目录里的data文件夹的上一级文件夹**,原文件会被替换,请注意备份原游戏
+* 8. Finally, select "Export Project", choose "Export to Folder", and specify **the parent folder of the data folder in your game directory**. The original files will be replaced, please back up the original game
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/修改游戏1.png" width="600" height="400"> | <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Tpp/修改游戏2.png" width="600" height="400">
 </details>
 
@@ -289,38 +279,38 @@
 <details>
 <summary>
  
-### 如果使用StevExtraction进行游戏翻译
+### How to Use StevExtraction for Game Translation
 </summary>
 
-*  0.工具详情功能及介绍：[工具原作者页面](https://www.ai2moe.org/topic/10271-jt%EF%BC%8C%E7%9B%AE%E6%A0%87%E6%98%AF%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9A%84%EF%BC%8C%E5%86%85%E5%B5%8C%E4%BA%86%E5%A4%9A%E4%B8%AA%E8%84%9A%E6%9C%AC%E7%9A%84%E9%9D%92%E6%98%A5%E7%89%88t/) 
+* 0. Tool details, functions and introduction: [Tool Author's Page](https://www.ai2moe.org/topic/10271-jt%EF%BC%8C%E7%9B%AE%E6%A0%87%E6%98%AF%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9A%84%EF%BC%8C%E5%86%85%E5%B5%8C%E4%BA%86%E5%A4%9A%E4%B8%AA%E8%84%9A%E6%9C%AC%E7%9A%84%E9%9D%92%E6%98%A5%E7%89%88t/) 
 
 
-*  1.在提取页面进行提取,目前只能适应于RPG Maker MVMZ游戏，能提取到游戏的原文和人物名字
+* 1. Extract on the extraction page. Currently, it only adapts to RPG Maker MV/MZ games and can extract the original text and character names of the game
     ><img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Extraction/提取原文.png" width="600" height="400"> <br>
-    >`是否日语游戏`: 根据游戏进行选择<br>
+    >`Is it a Japanese game?`: Select according to the game<br>
 
-    >`是否翻译note类型文本`: # 在翻译ACT游戏时，尝试关闭该选项，否则大概率无法攻击或攻击没有效果<br>
+    >`Whether to translate note type text`: # When translating ACT games, try turning off this option, otherwise, you will most likely not be able to attack or your attacks will have no effect<br>
 
-    >`游戏文件夹`: 游戏根目录<br>
+    >`Game folder`: The root directory of the game<br>
 
-    >`原文存储文件夹`: 提取到的游戏原文存储的地方<br>
+    >`Original text storage folder`: Where the extracted original game text is stored<br>
   
-    >`工程存储文件夹`: 关于这个游戏的工程数据存储的地方，后面注入还会用到<br>
+    >`Project storage folder`: Where the project data about this game is stored, it will be used later for injection<br>
   
   
-*  2.在`翻译设置`界面的`翻译项目`选择`🔵T++导出文件`,并配置翻译设置
+* 2. In the `Translation Settings` interface, select `🔵T++ Export File` for `Translation Project` and configure the translation settings
 
 
-*  3.注入回原文
+* 3. Inject back into the original text
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Extraction/注入译文.png"  width="600" height="400"> <br>
     
-    >`游戏文件夹`: 游戏根目录<br>
+    >`Game folder`: The root directory of the game<br>
 
-    >`译文文件夹`: 之前经过翻译的原文文件<br>
+    >`Translation folder`: The previously translated original text files<br>
   
-    >`工程文件夹`: 之前这个游戏的工程数据存储的地方<br>
+    >`Project folder`: Where the project data about this game was previously stored<br>
 
-    >`存储文件夹`: 注入译文后存储的地方<br>
+    >`Storage folder`: Where the injected translation will be stored<br>
 
 </details>
 
@@ -330,17 +320,17 @@
 <details>
 <summary>
 
-### 如果使用 Paratranz 进行游戏翻译
+### How to Use Paratranz for Game Translation
 </summary>
 
-*  0.工具详情：[官方网站](https://paratranz.cn/) 这是一个专用于业余翻译工作的站点，与 Ainiee 的对接主要用于预先对文本进行机翻，之后可以进行校对。
+* 0. Tool details: [Official Website](https://paratranz.cn/) This is a site dedicated to amateur translation work.  The integration with Ainiee is mainly used to pre-translate text with machine translation, which can then be proofread.
 
-*  1.在项目的 `文件管理` 界面，对需要进行翻译的原文，执行 `下载原始数据` ，将下载下来的数据复制到 `翻译设置` 中的 `输入文件夹` 目录
+* 1. In the project's `File Management` interface, for the original text that needs to be translated, execute `Download Original Data`, and copy the downloaded data to the `Input Folder` directory in `Translation Settings`
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Paratranz/Paratranz_export.png" width="600" height="400"> <br>
-*  2.在`翻译设置`界面的`翻译项目`选择`🔵Paratranz导出文件`,并配置翻译设置<br>
+* 2. In the `Translation Settings` interface, select `🔵Paratranz Export File` for `Translation Project` and configure the translation settings<br>
     > <img src="https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Paratranz/project_type.png" width="600" height="400"> <br>
-*  3.🖱️到开始翻译页面，点击**开始翻译**按钮,看控制台输出日志或者进度条。之后等待翻译进度到百分百,自动生成翻译好的文件在输出文件夹中
-*  4.回到 `Paratranz`工具,依然在 `文件管理` 界面,选择 `导入译文` ,选择翻译后的 json 文件进行导入即可
+* 3. 🖱️ Go to the Start Translation page, click the **Start Translation** button, and check the console output log or progress bar. Wait for the translation progress to reach 100%, the translated file will be automatically generated in the output folder
+* 4. Go back to the `Paratranz` tool, still in the `File Management` interface, select `Import Translation`, and choose the translated json file to import
 </details>
 
 
@@ -353,38 +343,38 @@
 <details>
 <summary> 
 
-## 常用功能说明[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#常用功能说明) 
+## Common Function Descriptions [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#common-function-descriptions) 
 </summary>
 
-* ` 多key轮询`
-  >如果想使用多个key来分担消耗压力，根据key数量进行加速翻译，请使用同类型账号的key，而且输入时在每个key中间加上英文逗号，不要换行。例如：key1,key2,key3
+* ` Multi-key Polling`
+  >If you want to use multiple keys to share the consumption pressure and speed up translation based on the number of keys, please use keys of the same account type. When entering, add an English comma between each key, do not wrap. For example: key1,key2,key3
 
-* ` 批量文件翻译`
-  >把所有相同类型的文件放在输入文件夹即可，也支持多文件夹结构
+* ` Batch File Translation`
+  >Place all files of the same type in the input folder. Multi-folder structures are also supported
 
-* ` 配置迁移`
-  >配置信息都会存储在resource的config.json中，下载新版本可以把它复制到新版本的resource中。
+* ` Configuration Migration`
+  >Configuration information is stored in config.json in the resource folder. When downloading a new version, you can copy it to the resource folder of the new version.
   
-* ` 自定义请求格式与模型`
-  >在代理平台页面中，选择相应的请求格式，并在模型选择的下拉框中直接输入模型名字，可以自定义组合发送格式与模型。如果想在官方接口调用新模型，需要自行编辑Resource/platform文件夹里的模型信息文件。
+* ` Custom Request Format and Model`
+  > In the proxy platform page, select the corresponding request format, and directly enter the model name in the dropdown box of the model selection to customize the combination of sending format and model. If you want to call a new model on the official API, you need to manually edit the model information file in the Resource/platform folder.
 
-* ` 翻译暂停继续`
-  >暂停时请耐心等待提示全部任务暂停完成，暂停后可更换设置，继续后会以新的设置继续翻译
+* ` Pause and Resume Translation`
+  > When pausing, please wait patiently for the prompt to indicate that all tasks have been paused. After pausing, you can change the settings. When resuming, the translation will continue with the new settings
 
-* `自动备份缓存文件到输出文件夹`
-  >当翻译遇到问题时，可以之后更改翻译项目为缓存文件，并在输入文件夹选择该缓存文件所在的文件夹进行继续翻译。当继续翻译Epub小说文件时，还需要把原来的文件和缓存文件放在同一个文件夹里面。开启该功能会因硬盘的写入速度而影响软件的翻译速度，开启超多线程时，可以关闭此功能。
+* ` Automatically Back Up Cache Files to the Output Folder`
+  > When encountering problems during translation, you can later change the translation project to a cache file and select the folder where the cache file is located in the input folder to continue translation. When continuing to translate Epub novel files, you also need to place the original file and the cache file in the same folder. Enabling this feature will affect the translation speed of the software due to the write speed of the hard disk. When enabling a large number of threads, you can disable this feature.
   
-* `导出当前任务的已翻译文件`
-  >会将已经翻译好的内容和未翻译的内容导出。mtool项目与Paratranz项目会分为两个文件，会带有不同的后缀。T++项目会仍然是同一个文件里，已翻译文本的右边会有内容，未翻译的没有。其他项目都会混合在一个文件里输出。
+* ` Export Translated Files of the Current Task`
+  > This will export both the translated and untranslated content. Mtool projects and Paratranz projects will be divided into two files with different suffixes. T++ projects will still be in the same file, with content on the right side of the translated text and nothing on the untranslated side. Other projects will be output mixed in one file.
   
-* `提示字典`
-  >用来统一名词的翻译，让AI翻译的人名，物品名词，怪物名词，特殊名词能够翻译成你想要的样子。备注信息可写可不写
+* ` Prompt Dictionary`
+  > Used to unify the translation of terms, so that AI can translate character names, item nouns, monster nouns, and special nouns into the form you want. Remarks can be written or not
 
-* `提示书`
-  >用来提高翻译的准确度和流畅性，写好各种内容，配合高性能模型，能够提升翻译的质量
+* ` Prompt Book`
+  > Used to improve the accuracy and fluency of translation. Write various content and combine it with high-performance models to improve translation quality
 
-* `AI实时调教`
-  >用来改变AI的参数设定，控制AI生成内容时的随机性，重复性，通常用来解决模型退化，语气词重复的问题
+* ` Real-time AI Tuning`
+  > Used to change the parameter settings of AI and control the randomness and repetitiveness of AI-generated content. It is usually used to solve problems such as model degradation and repetition of modal particles
 
   
 </details>
@@ -394,28 +384,30 @@
 <details>
 <summary>
 
-## 常见问题[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#常见问题)  
+## Frequently Asked Questions [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#frequently-asked-questions)  
 </summary>
 
-* 【如何反馈自己在使用中遇到的问题】————————将CMD窗口（黑黑的那个框框）的内容完整截图下来，里面有程序运行日志，还有软件界面设置截图，然后将问题描述清晰带上截图到群里或者issue提问。当进一步排除问题，需要到原文本或者翻译后文本时，请压缩并上传。
+* 【How to report problems encountered while using】————————Take a full screenshot of the contents of the CMD window (the black box), which contains the program's running log, as well as a screenshot of the software's interface settings. Then describe the problem clearly with the screenshots in the group or issue question. When further troubleshooting requires the original text or translated text, please compress and upload it.
 
-* 【翻译“卡住”了】————————如果运行日志中，无错误提醒，请耐心等待
+* 【Translation "stuck"】————————If there are no error messages in the running log, please wait patiently
 
-* 【mtool导入翻译文本后，显示一句原文一句译文，或者全部原文】————————更新mtool到最新版，或者找mtool作者反馈该问题
+* 【After importing the translated text into Mtool, it shows one original sentence and one translated sentence, or all original text】————————Update Mtool to the latest version, or contact the Mtool author to report the issue
   
-* 【翻译后文本导入到T++不完全，部分未能百分百导入全部译文】————————在非RPGMVZ游戏中，出现该问题比较多，使用最新赞助版T++可以缓解，还可以自己手动打开表格，自己复制粘贴进去
+* 【The translated text is not fully imported into T++, some parts failed to import the entire translation】———————— This problem occurs more often in non-RPGMVZ games. Using the latest sponsored version of T++ can alleviate it. You can also manually open the table and copy and paste it yourself
 
 </details>
 
 ---
 
-## 声明[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#声明)   
-该款AI翻译工具仅供个人合法用途,任何使用该工具进行直接或者间接非法盈利活动的行为,均不属于授权范围,也不受到任何支持和认可。
+## Disclaimer [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#disclaimer)   
+This AI translation tool is for personal and legal use only. Any act of using this tool for direct or indirect illegal profit-making activities is not within the scope of authorization and is not supported or recognized.
 
-* **`交♂交流群`**:  QQ交流群(主要)：821624890，备用TG群：https://t.me/+JVHbDSGo8SI2Njhl ,
+* **`Communication Groups`**: QQ group (main): 821624890, backup TG group: https://t.me/+JVHbDSGo8SI2Njhl ,
 
 ---
 
-## 赞助💖
+## Sponsorship 💖
 [![xxxx](https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Sponsor/徽章.png)](https://raw.githubusercontent.com/NEKOparapa/AiNiee-chatgpt/main/Example%20image/Sponsor/赞赏码.png)
+
+
 
